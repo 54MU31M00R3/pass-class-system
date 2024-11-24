@@ -13,6 +13,7 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<Navbar />}>
+        <Route path='*' />
       </Route>
     )
   )
