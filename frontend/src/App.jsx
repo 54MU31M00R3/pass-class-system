@@ -5,17 +5,14 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom';
+import Navbar from './shared/components/Navbar';
 
 
 function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={
-        <div>
-          Hello world!
-        </div>
-      }>
+      <Route path='/' element={<Navbar />}>
       </Route>
     )
   )
