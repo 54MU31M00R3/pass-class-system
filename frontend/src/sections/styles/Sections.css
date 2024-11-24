@@ -1,0 +1,12 @@
+.sectionInfo {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 10em;
+    height: auto;
+}
+
+.sectionsContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
