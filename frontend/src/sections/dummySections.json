@@ -1,0 +1,62 @@
+[
+    {
+        "courseName": "Introduction to Psychology",
+        "courseSection": "PSY101-A",
+        "timeOfSession": "09:00 AM - 10:30 AM",
+        "buildingRoomNumber": "Building A, Room 101"
+    },
+    {
+        "courseName": "Calculus I",
+        "courseSection": "MATH201-B",
+        "timeOfSession": "11:00 AM - 12:30 PM",
+        "buildingRoomNumber": "Building B, Room 202"
+    },
+    {
+        "courseName": "Introduction to Sociology",
+        "courseSection": "SOC101-C",
+        "timeOfSession": "01:00 PM - 02:30 PM",
+        "buildingRoomNumber": "Building C, Room 303"
+    },
+    {
+        "courseName": "Modern World History",
+        "courseSection": "HIST210-D",
+        "timeOfSession": "03:00 PM - 04:30 PM",
+        "buildingRoomNumber": "Building D, Room 404"
+    },
+    {
+        "courseName": "Principles of Microeconomics",
+        "courseSection": "ECON101-E",
+        "timeOfSession": "08:00 AM - 09:30 AM",
+        "buildingRoomNumber": "Building E, Room 505"
+    },
+    {
+        "courseName": "Introduction to Computer Science",
+        "courseSection": "CS101-F",
+        "timeOfSession": "10:00 AM - 11:30 AM",
+        "buildingRoomNumber": "Building F, Room 606"
+    },
+    {
+        "courseName": "General Chemistry",
+        "courseSection": "CHEM101-G",
+        "timeOfSession": "12:00 PM - 01:30 PM",
+        "buildingRoomNumber": "Building G, Room 707"
+    },
+    {
+        "courseName": "Fundamentals of Marketing",
+        "courseSection": "MKT201-H",
+        "timeOfSession": "02:00 PM - 03:30 PM",
+        "buildingRoomNumber": "Building H, Room 808"
+    },
+    {
+        "courseName": "Creative Writing",
+        "courseSection": "ENG301-I",
+        "timeOfSession": "04:00 PM - 05:30 PM",
+        "buildingRoomNumber": "Building I, Room 909"
+    },
+    {
+        "courseName": "Physics for Engineers",
+        "courseSection": "PHYS201-J",
+        "timeOfSession": "06:00 PM - 07:30 PM",
+        "buildingRoomNumber": "Building J, Room 1001"
+    }
+]

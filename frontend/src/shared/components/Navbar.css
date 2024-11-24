@@ -2,7 +2,7 @@
     border: 1px solid black;
 }
 
-ul {
+.navLinks{
     list-style-type: none;
     display: flex;
     gap: 16px;

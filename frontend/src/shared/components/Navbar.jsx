@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <>
             <div className='header'>
-                <ul>
+                <ul className='navLinks'>
                     <li>
                         <NavLink className='headerLink' to='/'>Home</NavLink>
                     </li>
