@@ -1,6 +1,10 @@
 import React from 'react'
 
 function RegisterForm({ formToggler }) {
+    const registerSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <>
             <form className='registerForm'>
@@ -12,9 +16,9 @@ function RegisterForm({ formToggler }) {
                 <input id='studentNum' type='text' />
                 <label htmlFor='password'>Password</label>
                 <input id='password' type='text' />
-                <button>SIGNUP</button>
+                <button onClick={registerSubmit}>SIGNUP</button>
             </form>
-            <button>SWITCH TO LOGIN</button>
+            <button onClick={formToggler}>SWITCH TO LOGIN</button>
         </>
     )
 }

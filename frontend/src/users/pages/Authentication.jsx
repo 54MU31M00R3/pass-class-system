@@ -8,10 +8,14 @@ import '../styles/Users.css';
 function Authentication() {
     const [loginMode, setLoginMode] = useState(true);
 
+    const loginModeHandler = () => {
+        setLoginMode(loginMode => !loginMode);
+    }
+
     if (loginMode) {
-        return <LoginForm formToggler={setLoginMode}/>
+        return <LoginForm formToggler={loginModeHandler}/>
     } else {
-        return <RegisterForm formToggler={setLoginMode}/>
+        return <RegisterForm formToggler={loginModeHandler}/>
     }
 }
 

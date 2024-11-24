@@ -1,6 +1,10 @@
 import React from 'react'
 
 function LoginForm({ formToggler }) {
+    const loginSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <>
             <form className='loginForm'>
@@ -8,9 +12,9 @@ function LoginForm({ formToggler }) {
                 <input id='email' type='text' />
                 <label htmlFor='password'>Password</label>
                 <input id='password' type='text' />
-                <button>LOGIN</button>
+                <button onClick={loginSubmit}>LOGIN</button>
             </form>
-            <button>SWITCH TO SIGNUP</button>
+            <button onClick={formToggler}>SWITCH TO SIGNUP</button>
         </>
     )
 }
