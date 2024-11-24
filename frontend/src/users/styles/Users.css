@@ -1,0 +1,17 @@
+.authForm {
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+}
+
+.formDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
