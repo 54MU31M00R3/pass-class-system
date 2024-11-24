@@ -5,14 +5,14 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom';
-import Navbar from './shared/components/Navbar';
+import MainLayout from './layouts/MainLayout';
 
 
 function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={<Navbar />}>
+      <Route path='/' element={<MainLayout />}>
         <Route path='*' />
       </Route>
     )
