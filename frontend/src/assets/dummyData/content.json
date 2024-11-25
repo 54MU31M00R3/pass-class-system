@@ -1,0 +1,142 @@
+[
+    {
+        "contentId": 101,
+        "sectionId": 1,
+        "contentType": "announcement",
+        "title": "Welcome to Psychology 101",
+        "datePosted": "2024-01-15"
+    },
+    {
+        "contentId": 102,
+        "sectionId": 1,
+        "contentType": "worksheet",
+        "title": "Worksheet: Introduction to Psychology",
+        "datePosted": "2024-01-16"
+    },
+    {
+        "contentId": 201,
+        "sectionId": 2,
+        "contentType": "announcement",
+        "title": "Calculus I Office Hours Schedule",
+        "datePosted": "2024-01-14"
+    },
+    {
+        "contentId": 202,
+        "sectionId": 2,
+        "contentType": "worksheet",
+        "title": "Worksheet: Limits and Continuity",
+        "datePosted": "2024-01-17"
+    },
+    {
+        "contentId": 301,
+        "sectionId": 3,
+        "contentType": "announcement",
+        "title": "Upcoming Sociology Quiz",
+        "datePosted": "2024-01-13"
+    },
+    {
+        "contentId": 302,
+        "sectionId": 3,
+        "contentType": "worksheet",
+        "title": "Worksheet: Social Norms",
+        "datePosted": "2024-01-18"
+    },
+    {
+        "contentId": 401,
+        "sectionId": 4,
+        "contentType": "announcement",
+        "title": "History Midterm Study Guide",
+        "datePosted": "2024-01-19"
+    },
+    {
+        "contentId": 402,
+        "sectionId": 4,
+        "contentType": "worksheet",
+        "title": "Worksheet: Historical Analysis",
+        "datePosted": "2024-01-20"
+    },
+    {
+        "contentId": 501,
+        "sectionId": 5,
+        "contentType": "announcement",
+        "title": "Economics Workshop Registration",
+        "datePosted": "2024-01-12"
+    },
+    {
+        "contentId": 502,
+        "sectionId": 5,
+        "contentType": "worksheet",
+        "title": "Worksheet: Supply and Demand",
+        "datePosted": "2024-01-15"
+    },
+    {
+        "contentId": 601,
+        "sectionId": 6,
+        "contentType": "announcement",
+        "title": "CS101 Project Guidelines",
+        "datePosted": "2024-01-10"
+    },
+    {
+        "contentId": 602,
+        "sectionId": 6,
+        "contentType": "worksheet",
+        "title": "Worksheet: Basic Programming",
+        "datePosted": "2024-01-11"
+    },
+    {
+        "contentId": 701,
+        "sectionId": 7,
+        "contentType": "announcement",
+        "title": "Lab Safety Instructions",
+        "datePosted": "2024-01-09"
+    },
+    {
+        "contentId": 702,
+        "sectionId": 7,
+        "contentType": "worksheet",
+        "title": "Worksheet: Chemical Reactions",
+        "datePosted": "2024-01-12"
+    },
+    {
+        "contentId": 801,
+        "sectionId": 8,
+        "contentType": "announcement",
+        "title": "Marketing Guest Lecture",
+        "datePosted": "2024-01-08"
+    },
+    {
+        "contentId": 802,
+        "sectionId": 8,
+        "contentType": "worksheet",
+        "title": "Worksheet: Branding Strategies",
+        "datePosted": "2024-01-11"
+    },
+    {
+        "contentId": 901,
+        "sectionId": 9,
+        "contentType": "announcement",
+        "title": "Creative Writing Contest",
+        "datePosted": "2024-01-07"
+    },
+    {
+        "contentId": 902,
+        "sectionId": 9,
+        "contentType": "worksheet",
+        "title": "Worksheet: Writing Prompts",
+        "datePosted": "2024-01-09"
+    },
+    {
+        "contentId": 1001,
+        "sectionId": 10,
+        "contentType": "announcement",
+        "title": "Physics Problem-Solving Tips",
+        "datePosted": "2024-01-06"
+    },
+    {
+        "contentId": 1002,
+        "sectionId": 10,
+        "contentType": "worksheet",
+        "title": "Worksheet: Mechanics Problems",
+        "datePosted": "2024-01-10"
+    }
+]

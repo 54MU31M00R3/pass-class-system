@@ -1,0 +1,52 @@
+[
+    {
+        "contentId": 101,
+        "contentType": "announcement",
+        "text": "Welcome to Psychology 101! Please review the syllabus and prepare for our first discussion."
+    },
+    {
+        "contentId": 201,
+        "contentType": "announcement",
+        "text": "Calculus I office hours are now posted. Check the course portal for details."
+    },
+    {
+        "contentId": 301,
+        "contentType": "announcement",
+        "text": "Don't forget about the upcoming Sociology Quiz. Study materials are available online."
+    },
+    {
+        "contentId": 401,
+        "contentType": "announcement",
+        "text": "History Midterm Study Guide has been uploaded. Review sessions will be scheduled soon."
+    },
+    {
+        "contentId": 501,
+        "contentType": "announcement",
+        "text": "Sign up for the Economics Workshop to deepen your understanding of supply and demand concepts."
+    },
+    {
+        "contentId": 601,
+        "contentType": "announcement",
+        "text": "CS101 Project Guidelines are now available. Please form your project groups by next week."
+    },
+    {
+        "contentId": 701,
+        "contentType": "announcement",
+        "text": "Lab Safety Instructions must be reviewed before our first General Chemistry lab session."
+    },
+    {
+        "contentId": 801,
+        "contentType": "announcement",
+        "text": "Don't miss the guest lecture on Branding Strategies in Marketing. RSVP on the course portal."
+    },
+    {
+        "contentId": 901,
+        "contentType": "announcement",
+        "text": "Enter the Creative Writing Contest for a chance to showcase your work and win prizes!"
+    },
+    {
+        "contentId": 1001,
+        "contentType": "announcement",
+        "text": "Physics Problem-Solving Tips have been shared. Please review them before the next session."
+    }
+]
