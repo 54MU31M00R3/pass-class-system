@@ -1,9 +1,13 @@
 import React from 'react'
 
+import SectionForm from '../components/SectionForm'
+
 function CreateSection() {
-  return (
-    <div>CreateSection</div>
-  )
+    return (
+        <>
+            <SectionForm />
+        </>
+    )
 }
 
 export default CreateSection
