@@ -6,7 +6,7 @@ import sections from '../../../assets/dummySections.json';
 
 
 function Dashboard() {
-  const userId = useParams().uid;
+  const userId = useParams().userId;
 
   const userSections = sections.filter(section => {
     return section.userIds.find(Id => Id == userId)
