@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import AnnouncementForm from '../components/AnnouncementForm';
 import WorksheetForm from '../components/WorksheetForm';
 
 function UploadContent() {
-  return (
-    <div>UploadContent</div>
-  )
+    const [contentMode, setContentMode] = useState('announcement')
+
+    const contentModeHandler = (mode) => {
+        setContentMode(mode);
+    }
+
+    if (contentMode === 'announcement') {
+        return <AnnouncementForm formToggler={contentModeHandler}/>
+    } else if (contentMode === 'worksheet'){
+        return <WorksheetForm formToggler={contentModeHandler}/>
+    }
 }
 
 export default UploadContent;
