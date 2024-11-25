@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import SectionsList from '../components/SectionsList';
-import sections from '../../../assets/dummySections.json';
+import sections from '../../../assets/dummyData/sections.json';
 
 
 function Dashboard() {
