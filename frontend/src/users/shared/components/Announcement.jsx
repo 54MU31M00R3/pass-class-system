@@ -1,8 +1,20 @@
 import React from 'react'
 
-function Announcement() {
+import annoucements from '../../../assets/dummyData/announcement.json'
+
+function Announcement({ content }) {
+  const announcement = annoucements.find(announcement => announcement.contentId == content.contentId)
+
   return (
-    <div>Announcement</div>
+    <>
+      <ul>
+        <li>{content.title}</li>
+        <li>{content.datePosted}</li>
+      </ul>
+      <div>
+        {announcement.text}
+      </div>
+    </>
   )
 }
 

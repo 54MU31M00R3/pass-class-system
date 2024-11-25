@@ -18,7 +18,7 @@ function Section() {
                 timeOfSession={section.timeOfSession}
                 buildingRoomNumber={section.buildingRoomNumber}
             />
-            <SectionContent />
+            <SectionContent sectionId={sectionId}/>
         </>
     )
 }
