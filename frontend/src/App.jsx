@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 
 import MainLayout from './layouts/MainLayout';
-import HomePage from './users/shared/pages/HomePage';
-import Authentication from './users/shared/pages/Authentication';
-import Dashboard from './users/shared/pages/Dashboard';
-import SectionPage from './users/shared/pages/SectionPage';
+import HomePage from './shared/pages/HomePage';
+import Authentication from './auth/pages/Authentication';
+import Dashboard from './shared/pages/Dashboard';
+import SectionPage from './content/pages/SectionPage';
 
 
 function App() {

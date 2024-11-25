@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import SectionItem from '../components/SectionItem';
+import SectionItem from '../../shared/components/SectionItem';
 import SectionContent from '../components/SectionContent';
-import sections from '../../../assets/dummyData/sections.json';
+import sections from '../../assets/dummyData/sections.json';
 
 function Section() {
     const sectionId = useParams().sectionId;

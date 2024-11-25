@@ -1,6 +1,6 @@
 import React from 'react'
 
-import annoucements from '../../../assets/dummyData/announcement.json'
+import annoucements from '../../assets/dummyData/announcement.json'
 
 function Announcement({ content }) {
   const announcement = annoucements.find(announcement => announcement.contentId == content.contentId)

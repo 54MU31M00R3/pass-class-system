@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Announcement from './Announcement';
+import Announcement from '../../content/components/Announcement';
 import Worksheet from './Worksheet';
 
-import content from '../../../assets/dummyData/content.json'
+import content from '../../assets/dummyData/content.json'
 
 function SectionContent({ sectionId }) {
   const filteredContent = content.filter(content => content.sectionId == sectionId)
@@ -12,9 +12,9 @@ function SectionContent({ sectionId }) {
     <>
       {filteredContent.map(content => {
         if (content.contentType === 'worksheet') {
-          return <Worksheet content={content}/>
+          return <Worksheet key={content.contentId} content={content}/>
         } else if (content.contentType === 'announcement') {
-          return <Announcement content={content}/>
+          return <Announcement key={content.contentId} content={content}/>
         }
       })}
     </>

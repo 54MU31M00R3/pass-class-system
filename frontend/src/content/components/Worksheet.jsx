@@ -1,6 +1,6 @@
 import React from 'react';
 
-import worksheets from '../../../assets/dummyData/worksheet.json'
+import worksheets from '../../assets/dummyData/worksheet.json'
 
 function Worksheet({ content }) {
   const worksheet = worksheets.find(worksheet => worksheet.contentId == content.contentId)
