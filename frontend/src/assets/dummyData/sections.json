@@ -5,11 +5,12 @@
     "courseSection": "PSY101-A",
     "timeOfSession": "09:00 AM - 10:30 AM",
     "buildingRoomNumber": "Building A, Room 101",
-    "userIds": [
+    "studentIds": [
       10001,
-      10003,
+      10004,
       10008
-    ]
+    ],
+    "mentorId": 10003
   },
   {
     "sectionId": 2,
@@ -17,10 +18,11 @@
     "courseSection": "MATH201-B",
     "timeOfSession": "11:00 AM - 12:30 PM",
     "buildingRoomNumber": "Building B, Room 202",
-    "userIds": [
+    "studentIds": [
       10002,
-      10006
-    ]
+      10007
+    ],
+    "mentorId": 10005
   },
   {
     "sectionId": 3,
@@ -28,11 +30,12 @@
     "courseSection": "SOC101-C",
     "timeOfSession": "01:00 PM - 02:30 PM",
     "buildingRoomNumber": "Building C, Room 303",
-    "userIds": [
+    "studentIds": [
       10001,
       10004,
-      10009
-    ]
+      10008
+    ],
+    "mentorId": 10009
   },
   {
     "sectionId": 4,
@@ -40,11 +43,11 @@
     "courseSection": "HIST210-D",
     "timeOfSession": "03:00 PM - 04:30 PM",
     "buildingRoomNumber": "Building D, Room 404",
-    "userIds": [
+    "studentIds": [
       10002,
-      10005,
-      10009
-    ]
+      10007
+    ],
+    "mentorId": 10009
   },
   {
     "sectionId": 5,
@@ -52,11 +55,12 @@
     "courseSection": "ECON101-E",
     "timeOfSession": "08:00 AM - 09:30 AM",
     "buildingRoomNumber": "Building E, Room 505",
-    "userIds": [
+    "studentIds": [
       10001,
-      10005,
+      10004,
       10007
-    ]
+    ],
+    "mentorId": 10005
   },
   {
     "sectionId": 6,
@@ -64,11 +68,11 @@
     "courseSection": "CS101-F",
     "timeOfSession": "10:00 AM - 11:30 AM",
     "buildingRoomNumber": "Building F, Room 606",
-    "userIds": [
-      10003,
-      10006,
-      10010
-    ]
+    "studentIds": [
+      10002,
+      10007
+    ],
+    "mentorId": 10003
   },
   {
     "sectionId": 7,
@@ -76,11 +80,11 @@
     "courseSection": "CHEM101-G",
     "timeOfSession": "12:00 PM - 01:30 PM",
     "buildingRoomNumber": "Building G, Room 707",
-    "userIds": [
-      10004,
-      10007,
-      10010
-    ]
+    "studentIds": [
+      10001,
+      10004
+    ],
+    "mentorId": 10005
   },
   {
     "sectionId": 8,
@@ -88,11 +92,11 @@
     "courseSection": "MKT201-H",
     "timeOfSession": "02:00 PM - 03:30 PM",
     "buildingRoomNumber": "Building H, Room 808",
-    "userIds": [
-      10003,
-      10008,
-      10010
-    ]
+    "studentIds": [
+      10002,
+      10008
+    ],
+    "mentorId": 10003
   },
   {
     "sectionId": 9,
@@ -100,10 +104,11 @@
     "courseSection": "ENG301-I",
     "timeOfSession": "04:00 PM - 05:30 PM",
     "buildingRoomNumber": "Building I, Room 909",
-    "userIds": [
-      10005,
+    "studentIds": [
+      10004,
       10008
-    ]
+    ],
+    "mentorId": 10009
   },
   {
     "sectionId": 10,
@@ -111,9 +116,10 @@
     "courseSection": "PHYS201-J",
     "timeOfSession": "06:00 PM - 07:30 PM",
     "buildingRoomNumber": "Building J, Room 1001",
-    "userIds": [
-      10006,
-      10009
-    ]
+    "studentIds": [
+      10002,
+      10007
+    ],
+    "mentorId": 10009
   }
 ]
