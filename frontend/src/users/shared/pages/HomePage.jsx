@@ -2,14 +2,13 @@ import React from 'react';
 
 import SectionsList from '../components/SectionsList';
 
-import sections from '../dummySections.json';
-import '../styles/Sections.css';
+import sections from '../../../../public/dummySections.json';
 
-function SectionsHomePage() {
+function HomePage() {
     const DUMMY_DATA = sections;
     return (
         <SectionsList loadedSections={DUMMY_DATA}/>
     )
 }
 
-export default Sections
+export default HomePage;

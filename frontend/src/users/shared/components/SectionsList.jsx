@@ -2,6 +2,8 @@ import React from 'react';
 
 import SectionItem from './SectionItem';
 
+import '../styles/Sections.css';
+
 function SectionsList({ loadedSections }) {
     return (
         <>
@@ -20,4 +22,4 @@ function SectionsList({ loadedSections }) {
     )
 }
 
-export default SectionsList
+export default SectionsList;
