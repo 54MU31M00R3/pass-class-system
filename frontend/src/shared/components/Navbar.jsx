@@ -12,10 +12,13 @@ function Navbar() {
                         <NavLink className='headerLink' to='/'>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink className='headerLink' to='/:uid/dashboard'>Dashboard</NavLink>
+                        <NavLink className='headerLink' to='/:uid/dashboard'>My Sections</NavLink>
                     </li>
                     <li>
                         <NavLink className='headerLink' to='/login'>Login</NavLink>
+                    </li>
+                    <li>
+                        <NavLink className='headerLink' to='/section/create'>Create Section</NavLink>
                     </li>
                 </ul>
             </div>

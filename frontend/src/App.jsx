@@ -11,6 +11,7 @@ import HomePage from './shared/pages/HomePage';
 import Authentication from './auth/pages/Authentication';
 import Dashboard from './shared/pages/Dashboard';
 import SectionPage from './content/pages/SectionPage';
+import CreateSection from './content/pages/CreateSection';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/login' element={<Authentication />} />
         <Route path='/:userId/dashboard' element={<Dashboard />} />
         <Route path='/:sectionId/section' element={<SectionPage />} />
+        <Route path='/section/create' element={<CreateSection />} />
         <Route path='*' />
       </Route>
     )
