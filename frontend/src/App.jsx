@@ -12,6 +12,7 @@ import Authentication from './auth/pages/Authentication';
 import Dashboard from './shared/pages/Dashboard';
 import SectionPage from './content/pages/SectionPage';
 import CreateSection from './content/pages/CreateSection';
+import UploadContent from './content/pages/UploadContent';
 
 
 function App() {
@@ -21,8 +22,9 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='/login' element={<Authentication />} />
         <Route path='/:userId/dashboard' element={<Dashboard />} />
-        <Route path='/:sectionId/section' element={<SectionPage />} />
         <Route path='/section/create' element={<CreateSection />} />
+        <Route path='/:sectionId/section' element={<SectionPage />} />
+        <Route path='/:sectionId/section/content/upload' element={<UploadContent />} />
         <Route path='*' />
       </Route>
     )
