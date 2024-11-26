@@ -42,7 +42,7 @@ function RegisterForm({ formToggler }) {
         <>
             <div className='formContainer'>
                 <div className='authForm'>
-                    <form className='formDetails'>
+                    <form className='formDetails' onSubmit={registerSubmit}>
                         <label htmlFor='username'>Username</label>
                         <input id='username' type='text' />
                         <label htmlFor='email'>Email</label>
@@ -51,7 +51,7 @@ function RegisterForm({ formToggler }) {
                         <input id='idNum' type='text' />
                         <label htmlFor='password'>Password</label>
                         <input id='password' type='password' />
-                        <button onClick={registerSubmit}>SIGNUP</button>
+                        <button type='submit'>SIGNUP</button>
                     </form>
                     <button onClick={formToggler}>SWITCH TO LOGIN</button>
                 </div>

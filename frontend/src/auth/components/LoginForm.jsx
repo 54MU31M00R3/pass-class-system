@@ -26,12 +26,12 @@ function LoginForm({ formToggler }) {
         <>
             <div className='formContainer'>
                 <div className='authForm'>
-                    <form className='formDetails'>
+                    <form className='formDetails' onSubmit={loginSubmit}>
                         <label htmlFor='email'>Email</label>
                         <input id='email' type='email' />
                         <label htmlFor='password'>Password</label>
                         <input id='password' type='password' />
-                        <button onClick={loginSubmit}>LOGIN</button>
+                        <button type='submit'>LOGIN</button>
                     </form>
                     <button onClick={formToggler}>SWITCH TO SIGNUP</button>
                 </div>
