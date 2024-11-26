@@ -7,11 +7,11 @@ function Announcement({ content }) {
 
   return (
     <>
-      <ul>
+      <ul className='contentHeader'>
         <li>{content.title}</li>
         <li>{content.datePosted}</li>
       </ul>
-      <div>
+      <div className='announcement'>
         {announcement.text}
       </div>
     </>

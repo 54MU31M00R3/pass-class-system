@@ -12,13 +12,11 @@ function Worksheet({ content }) {
 
   return (
     <>
-      <div>
-        <ul>
+        <ul className='contentHeader'>
           <li>{content.title}</li>
           <li>{content.datePosted}</li>
         </ul>
-        <a onClick={worksheetLinkHandler} href={worksheet.filePath}>View Worksheet</a>
-      </div>
+        <a className='worksheet' onClick={worksheetLinkHandler} href={worksheet.filePath}>View Worksheet</a>
     </>
   )
 }

@@ -10,15 +10,18 @@ function Section() {
 
     const section = sections.find(section => section.sectionId == sectionId);
 
-    return (
-        <>
-            <SectionItem
+    <SectionItem
                 courseName={section.courseName}
                 courseSection={section.courseSection}
                 timeOfSession={section.timeOfSession}
                 buildingRoomNumber={section.buildingRoomNumber}
             />
-            <SectionContent sectionId={sectionId}/>
+
+    return (
+        <>
+            <div className="contentContainer">
+                <SectionContent sectionId={sectionId}/>
+            </div>
         </>
     )
 }
