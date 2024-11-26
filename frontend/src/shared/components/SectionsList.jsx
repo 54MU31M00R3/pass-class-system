@@ -11,6 +11,7 @@ function SectionsList({ loadedSections }) {
                 {loadedSections.map((section) => {
                     return <SectionItem
                         key={section.sectionId}
+                        id={section.sectionId}
                         courseName={section.courseName}
                         courseSection={section.courseSection}
                         timeOfSession={section.timeOfSession}

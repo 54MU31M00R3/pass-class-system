@@ -1,12 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-function SectionItem({ courseName, courseSection, timeOfSession, buildingRoomNumber }) {
+import { Link } from 'react-router-dom';
+
+function SectionItem({ id, courseName, courseSection, timeOfSession, buildingRoomNumber }) {
     return (
         <ul className='sectionInfo'>
-            <li>{courseName}</li>
-            <li>{courseSection}</li>
-            <li>{timeOfSession}</li>
-            <li>{buildingRoomNumber}</li>
+            <div className="upperInfo">
+                <li>{courseName}</li>
+                <li>{courseSection}</li>
+            </div>
+            <div className="lowerContainer">
+                <div className="lowerInfo">
+                    <li>Time: {timeOfSession}</li>
+                    <li>Location: {buildingRoomNumber}</li>
+                </div>
+                <Link className='sectionLink' to={`/${id}/section`}>VIEW</Link>
+            </div>
         </ul>
     )
 }
