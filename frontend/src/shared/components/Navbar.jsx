@@ -24,6 +24,9 @@ function Navbar() {
                     {auth.isLoggedIn && (auth.role === 'pass leader') && (<li>
                         <NavLink className='headerLink' to='/section/create'>Create Section</NavLink>
                     </li>)}
+                    {auth.isLoggedIn && (<li>
+                        <NavLink onClick={auth.logout} className='headerLink' to='/'>Logout</NavLink>
+                    </li>)}
                 </ul>
             </div>
         </>

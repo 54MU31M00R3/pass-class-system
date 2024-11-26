@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '../../shared/context/auth-context';
+
+import sections from '../../assets/dummyData/sections.json';
 
 function SectionForm() {
+    const auth = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const createSectionHandler = (event) => {
         event.preventDefault();
+
+        const newSection = {
+            sectionId: Math.floor(Math.random() * 100),
+            courseName: courseName.value,
+            courseSection: courseSection.value,
+            timeOfSession: timeOfSession.value,
+            buildingRoomNumber: buildingRoomNumber.value,
+            studentIds: [],
+            mentorId: auth.userId
+        }
+
+        sections.push(newSection);
+
+        navigate('/')
     }
 
     return (
