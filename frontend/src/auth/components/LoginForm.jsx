@@ -33,7 +33,7 @@ function LoginForm({ formToggler }) {
                         <input id='password' type='password' />
                         <button type='submit'>LOGIN</button>
                     </form>
-                    <button onClick={formToggler}>SWITCH TO SIGNUP</button>
+                    <button className='formToggler' onClick={formToggler}>SWITCH TO SIGNUP</button>
                 </div>
             </div>
         </>

@@ -53,7 +53,7 @@ function RegisterForm({ formToggler }) {
                         <input id='password' type='password' />
                         <button type='submit'>SIGNUP</button>
                     </form>
-                    <button onClick={formToggler}>SWITCH TO LOGIN</button>
+                    <button className='formToggler' onClick={formToggler}>SWITCH TO LOGIN</button>
                 </div>
             </div>
         </>
