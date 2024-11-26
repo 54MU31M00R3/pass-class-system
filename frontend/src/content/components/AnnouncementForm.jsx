@@ -20,18 +20,20 @@ function AnnouncementForm({ formToggler }) {
 
         const contentId = Math.floor(Math.random() * 100);
 
+        const currentDate = new Date().toDateString();
+
         const newContent = {
             contentId: contentId,
             sectionId: sectionId,
             contentType: 'announcement',
             title: title.value,
-            datePosted: new Date()
+            datePosted: currentDate
         }
 
         const newAnnouncement = {
             contentId: contentId,
             contentType: 'announcement',
-            text: text.value
+            text: announcement.value
         }
 
         content.push(newContent);
@@ -47,7 +49,7 @@ function AnnouncementForm({ formToggler }) {
                         <label htmlFor='title'>Title</label>
                         <input id='title' type='text' />
                         <label htmlFor='announcement'>Announcement</label>
-                        <input id='announcement' type='textarea' />
+                        <textarea id='announcement'/>
                         <button onClick={announcementSubmit}>Post</button>
                     </form>
                     <label htmlFor='selectedmode'>Select Upload Type</label>
