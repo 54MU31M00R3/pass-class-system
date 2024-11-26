@@ -34,24 +34,14 @@ function App() {
 
   let router;
 
-  if (!isLoggedIn) {
-    router = createBrowserRouter(
-      createRoutesFromElements(
-        <Route path='/' element={<MainLayout />} >
-          <Route index element={<HomePage />} />
-          <Route path='/login' element={<Authentication />} />
-          <Route path='*' element={<HomePage />} />
-        </Route>
-      )
-    )
-  } else if (isLoggedIn && (role === 'student')) {
+  if (isLoggedIn && (role === 'student')) {
     router = createBrowserRouter(
       createRoutesFromElements(
         <Route path='/' element={<MainLayout />} >
           <Route index element={<HomePage />} />
           <Route path='/:userId/dashboard' element={<Dashboard />} />
           <Route path='/:sectionId/section' element={<SectionOverview />} />
-          <Route path='*' />
+          <Route path='*' element={<HomePage />}/>
         </Route>
       )
     )
@@ -64,7 +54,17 @@ function App() {
           <Route path='/section/create' element={<CreateSection />} />
           <Route path='/:sectionId/section' element={<SectionOverview />} />
           <Route path='/:sectionId/section/content/upload' element={<UploadContent />} />
-          <Route path='*' />
+          <Route path='*' element={<HomePage />}/>
+        </Route>
+      )
+    )
+  } else if (!isLoggedIn) {
+    router = createBrowserRouter(
+      createRoutesFromElements(
+        <Route path='/' element={<MainLayout />} >
+          <Route index element={<HomePage />} />
+          <Route path='/login' element={<Authentication />} />
+          <Route path='*' element={<HomePage />} />
         </Route>
       )
     )

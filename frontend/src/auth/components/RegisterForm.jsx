@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '../../shared/context/auth-context';
 
 import users from '../../assets/dummyData/users.json';
 import faculty from '../../assets/dummyData/faculty.json';
 
 function RegisterForm({ formToggler }) {
+    const auth = useContext(AuthContext);
+    const navigate = useNavigate();
+
     const registerSubmit = (event) => {
         event.preventDefault();
 
@@ -28,6 +34,8 @@ function RegisterForm({ formToggler }) {
         console.log(newUser);
         console.log(users);
 
+        auth.login(idNum.value, userRole);
+        navigate('/')
     }
 
     return (
@@ -40,9 +48,9 @@ function RegisterForm({ formToggler }) {
                         <label htmlFor='email'>Email</label>
                         <input id='email' type='email' />
                         <label htmlFor='idNum'>ID Number</label>
-                        <input id='idNum' type='password' />
+                        <input id='idNum' type='text' />
                         <label htmlFor='password'>Password</label>
-                        <input id='password' type='text' />
+                        <input id='password' type='password' />
                         <button onClick={registerSubmit}>SIGNUP</button>
                     </form>
                     <button onClick={formToggler}>SWITCH TO LOGIN</button>

@@ -18,9 +18,9 @@ function Navbar() {
                     {auth.isLoggedIn && (<li>
                         <NavLink className='headerLink' to='/:uid/dashboard'>My Sections</NavLink>
                     </li>)}
-                    <li>
+                    {!auth.isLoggedIn && (<li>
                         <NavLink className='headerLink' to='/login'>Login</NavLink>
-                    </li>
+                    </li>)}
                     {auth.isLoggedIn && (auth.role === 'pass leader') && (<li>
                         <NavLink className='headerLink' to='/section/create'>Create Section</NavLink>
                     </li>)}
