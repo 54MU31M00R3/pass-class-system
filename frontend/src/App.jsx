@@ -6,7 +6,7 @@ import {
   RouterProvider
 } from 'react-router-dom';
 
-import MainLayout from './layouts/MainLayout';
+import MainLayout from './shared/layouts/MainLayout';
 import HomePage from './shared/pages/HomePage';
 import Authentication from './auth/pages/Authentication';
 import Dashboard from './shared/pages/Dashboard';
@@ -34,7 +34,7 @@ function App() {
 
   let router;
 
-  if (isLoggedIn) {
+  if (!isLoggedIn) {
     router = createBrowserRouter(
       createRoutesFromElements(
         <Route path='/' element={<MainLayout />} >
