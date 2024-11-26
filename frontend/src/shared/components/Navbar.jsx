@@ -16,7 +16,7 @@ function Navbar() {
                         <NavLink className='headerLink' to='/'>Home</NavLink>
                     </li>
                     {auth.isLoggedIn && (<li>
-                        <NavLink className='headerLink' to='/:uid/dashboard'>My Sections</NavLink>
+                        <NavLink className='headerLink' to={`/${auth.userId}/dashboard`}>My Sections</NavLink>
                     </li>)}
                     {!auth.isLoggedIn && (<li>
                         <NavLink className='headerLink' to='/login'>Login</NavLink>
