@@ -1,6 +1,13 @@
 import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+
+import content from '../../assets/dummyData/content.json';
+import announcements from '../../assets/dummyData/announcement.json';
 
 function AnnouncementForm({ formToggler }) {
+    const sectionId = useParams().sectionId;
+    const navigate = useNavigate();
+
     const contentModeHandler = (event) => {
         event.preventDefault();
 
@@ -10,6 +17,26 @@ function AnnouncementForm({ formToggler }) {
 
     const announcementSubmit = (event) => {
         event.preventDefault();
+
+        const contentId = Math.floor(Math.random() * 100);
+
+        const newContent = {
+            contentId: contentId,
+            sectionId: sectionId,
+            contentType: 'announcement',
+            title: title.value,
+            datePosted: new Date()
+        }
+
+        const newAnnouncement = {
+            contentId: contentId,
+            contentType: 'announcement',
+            text: text.value
+        }
+
+        content.push(newContent);
+        announcements.push(newAnnouncement);
+        navigate(`/${sectionId}/section`);
     }
 
     return (
