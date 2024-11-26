@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import content from '../../assets/dummyData/content.json';
-import announcements from '../../assets/dummyData/announcement.json';
+import worksheets from '../../assets/dummyData/worksheet.json';
 
 function WorksheetForm({ formToggler }) {
     const sectionId = useParams().sectionId;
@@ -20,12 +20,14 @@ function WorksheetForm({ formToggler }) {
 
         const contentId = Math.floor(Math.random() * 100);
 
+        const currentDate = new Date().toDateString();
+
         const newContent = {
             contentId: contentId,
             sectionId: sectionId,
             contentType: 'worksheet',
             title: title.value,
-            datePosted: new Date()
+            datePosted: currentDate
         }
 
         const newAnnouncement = {
@@ -35,7 +37,7 @@ function WorksheetForm({ formToggler }) {
         }
 
         content.push(newContent);
-        announcements.push(newAnnouncement);
+        worksheets.push(newAnnouncement);
         navigate(`/${sectionId}/section`);
     }
     return (

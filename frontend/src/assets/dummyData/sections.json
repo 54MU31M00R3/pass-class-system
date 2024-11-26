@@ -20,6 +20,7 @@
     "buildingRoomNumber": "Building B, Room 202",
     "studentIds": [
       10002,
+      10003,
       10007
     ],
     "mentorId": 10005
