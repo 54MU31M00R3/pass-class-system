@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import AnnouncementForm from '../components/AnnouncementForm';
 import WorksheetForm from '../components/WorksheetForm';
 
+import '../../shared/styles/Forms.css';
+
 function UploadContent() {
     const [contentMode, setContentMode] = useState('announcement')
 

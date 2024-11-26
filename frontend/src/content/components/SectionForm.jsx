@@ -30,7 +30,7 @@ function SectionForm() {
     return (
         <>
             <div className='formContainer'>
-                <div className='secForm'>
+                <div className='subFormContainer'>
                     <form className='formDetails'>
                         <label htmlFor='courseName'>Course Name</label>
                         <input id='courseName' type='text' />

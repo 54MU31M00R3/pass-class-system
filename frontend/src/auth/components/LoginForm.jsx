@@ -25,7 +25,7 @@ function LoginForm({ formToggler }) {
     return (
         <>
             <div className='formContainer'>
-                <div className='authForm'>
+                <div className='subFormContainer'>
                     <form className='formDetails' onSubmit={loginSubmit}>
                         <label htmlFor='email'>Email</label>
                         <input id='email' type='email' />

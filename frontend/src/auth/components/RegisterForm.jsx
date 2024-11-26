@@ -41,7 +41,7 @@ function RegisterForm({ formToggler }) {
     return (
         <>
             <div className='formContainer'>
-                <div className='authForm'>
+                <div className='subFormContainer'>
                     <form className='formDetails' onSubmit={registerSubmit}>
                         <label htmlFor='username'>Username</label>
                         <input id='username' type='text' />

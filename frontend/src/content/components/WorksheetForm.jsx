@@ -41,7 +41,7 @@ function WorksheetForm({ formToggler }) {
     return (
         <>
             <div className='formContainer'>
-                <div className='annForm'>
+                <div className='subFormContainer'>
                     <form className='formDetails'>
                         <label htmlFor='title'>Title</label>
                         <input id='title' type='text' />

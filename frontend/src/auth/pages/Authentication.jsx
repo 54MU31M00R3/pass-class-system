@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 
-import '../styles/AuthForms.css';
+import '../../shared/styles/Forms.css';
 
 function Authentication() {
     const [loginMode, setLoginMode] = useState(true);
