@@ -25,7 +25,7 @@ function Navbar() {
                         <NavLink className='headerLink' to='/section/create'>Create Section</NavLink>
                     </li>)}
                     {auth.isLoggedIn && (<li>
-                        <NavLink onClick={auth.logout} className='headerLink' to='/'>Logout</NavLink>
+                        <NavLink onClick={auth.logout} className='headerLink' to='/login'>Logout</NavLink>
                     </li>)}
                 </ul>
             </div>
