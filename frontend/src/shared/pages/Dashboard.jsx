@@ -9,7 +9,7 @@ function Dashboard() {
   const userId = useParams().userId;
 
   const userSections = sections.filter(section => {
-    return section.userIds.find(Id => Id == userId)
+    return (section.studentIds.find(Id => Id == userId) || section.mentorId == userId)
   });
 
   return <SectionsList loadedSections={userSections} />
