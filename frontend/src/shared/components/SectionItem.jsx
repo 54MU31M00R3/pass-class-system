@@ -20,4 +20,4 @@ function SectionItem({ id, courseName, courseSection, timeOfSession, buildingRoo
     )
 }
 
-export default SectionItem
+export default SectionItem;
