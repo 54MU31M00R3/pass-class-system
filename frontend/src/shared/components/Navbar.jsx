@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+
+import { AuthContext } from '../context/auth-context';
 
 import '../styles/Navbar.css';
 
 function Navbar() {
+    const auth = useContext(AuthContext);
     return (
         <>
             <div className='header'>
@@ -12,15 +15,15 @@ function Navbar() {
                     <li>
                         <NavLink className='headerLink' to='/'>Home</NavLink>
                     </li>
-                    <li>
+                    {auth.isLoggedIn && (<li>
                         <NavLink className='headerLink' to='/:uid/dashboard'>My Sections</NavLink>
-                    </li>
+                    </li>)}
                     <li>
                         <NavLink className='headerLink' to='/login'>Login</NavLink>
                     </li>
-                    <li>
+                    {auth.isLoggedIn && (auth.role === 'pass leader') && (<li>
                         <NavLink className='headerLink' to='/section/create'>Create Section</NavLink>
-                    </li>
+                    </li>)}
                 </ul>
             </div>
         </>
