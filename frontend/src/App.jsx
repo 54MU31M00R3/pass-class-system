@@ -74,7 +74,7 @@ function App() {
     <AuthContext.Provider value={{
       isLoggedIn: isLoggedIn,
       userId: userId,
-      role: userRole,
+      role: role,
       login: login,
       logout: logout
     }}>
