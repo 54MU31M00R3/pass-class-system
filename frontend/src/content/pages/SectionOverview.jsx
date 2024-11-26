@@ -10,13 +10,6 @@ function Section() {
 
     const section = sections.find(section => section.sectionId == sectionId);
 
-    <SectionItem
-                courseName={section.courseName}
-                courseSection={section.courseSection}
-                timeOfSession={section.timeOfSession}
-                buildingRoomNumber={section.buildingRoomNumber}
-            />
-
     return (
         <>
             <div className="contentContainer">
