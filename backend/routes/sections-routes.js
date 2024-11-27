@@ -4,6 +4,8 @@ import sectionsController from '../controllers/sections-controller.js';
 
 const router = express.Router();
 
+router.get('/', sectionsController.getAllSections)
+
 router.post('/create', sectionsController.createSection);
 
 export default router;

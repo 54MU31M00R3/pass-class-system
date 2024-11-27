@@ -62,4 +62,4 @@ const createSection = async (req, res, next) => {
         .json({ section: newSection.toObject({ getters: true }) });
 }
 
-export default { createSection }
+export default { getAllSections, createSection }
