@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Announcement from '../../content/components/Announcement';
-import Worksheet from './Worksheet';
+import Worksheet from '../../content/components/Worksheet';
 
 import content from '../../assets/dummyData/content.json'
 

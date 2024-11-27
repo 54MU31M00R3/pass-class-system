@@ -10,8 +10,8 @@ import MainLayout from './shared/layouts/MainLayout';
 import HomePage from './shared/pages/HomePage';
 import Authentication from './auth/pages/Authentication';
 import Dashboard from './shared/pages/Dashboard';
-import SectionOverview from './content/pages/SectionOverview';
-import CreateSection from './content/pages/CreateSection';
+import SectionOverview from './sections/pages/SectionOverview';
+import CreateSection from './sections/pages/CreateSection';
 import UploadContent from './content/pages/UploadContent';
 import { AuthContext } from './shared/context/auth-context';
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { AuthContext } from '../context/auth-context';
+import { AuthContext } from '../../shared/context/auth-context';
 
 import { Link } from 'react-router-dom';
 
