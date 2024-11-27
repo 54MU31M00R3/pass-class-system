@@ -14,8 +14,28 @@ const getAllSections = async (req, res, next) => {
     }
 
     res.json({
-        sections: sections.map(section => {
-            return section.toObject({ getters: true })
+        sections: sections.map((section) => {
+            return section.toObject({ getters: true });
+        })
+    });
+}
+
+
+const getSectionsByUserId = async (req, res, next) => {
+    const userId = req.params.userId;
+
+    let userDashboardSections;
+
+    try {
+        userDashboardSections = await User.findById(userId).populate('sections').exec();
+    } catch (error) {
+        error.code = 500;
+        return next(error);
+    }
+
+    res.json({
+        sections: userDashboardSections.sections.map(section => {
+            return section.toObject({ getters: true });
         })
     })
 }
@@ -29,7 +49,7 @@ const createSection = async (req, res, next) => {
         timeOfSession,
         buildingRoomNumber,
         mentor
-    })
+    });
 
     let user;
     try {
@@ -62,4 +82,4 @@ const createSection = async (req, res, next) => {
         .json({ section: newSection.toObject({ getters: true }) });
 }
 
-export default { getAllSections, createSection }
+export default { getAllSections, createSection, getSectionsByUserId }

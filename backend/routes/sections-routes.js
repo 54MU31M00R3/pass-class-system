@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get('/', sectionsController.getAllSections)
 
+router.get('/:userId', sectionsController.getSectionsByUserId)
+
 router.post('/create', sectionsController.createSection);
 
 export default router;
