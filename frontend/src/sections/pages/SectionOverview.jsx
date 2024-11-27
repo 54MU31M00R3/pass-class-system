@@ -5,7 +5,7 @@ import SectionContent from '../components/SectionContent';
 import sections from '../../assets/dummyData/sections.json';
 import { AuthContext } from '../../shared/context/auth-context';
 
-function Section() {
+function SectionOverview() {
     const auth = useContext(AuthContext);
     const sectionId = useParams().sectionId;
 
@@ -21,4 +21,4 @@ function Section() {
     )
 }
 
-export default Section
+export default SectionOverview
