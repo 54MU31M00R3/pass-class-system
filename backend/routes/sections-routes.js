@@ -6,7 +6,9 @@ const router = express.Router();
 
 router.get('/', sectionsController.getAllSections)
 
-router.get('/:userId', sectionsController.getSectionsByUserId)
+router.get('/user/:userId', sectionsController.getSectionsByUserId)
+
+router.get('/section/:sectionId', sectionsController.getSectionById)
 
 router.post('/create', sectionsController.createSection);
 

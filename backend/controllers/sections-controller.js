@@ -40,6 +40,21 @@ const getSectionsByUserId = async (req, res, next) => {
     })
 }
 
+const getSectionById = async (req, res, next) => {
+    const sectionId = req.params.sectionId;
+
+    let section;
+
+    try {
+        section = await Section.findById(sectionId).exec();
+    } catch (error) {
+        error.code = 500;
+        return next(error);
+    }
+
+    res.json({ section: section.toObject({ getters: true }) });
+}
+
 const createSection = async (req, res, next) => {
     const { courseName, courseSection, timeOfSession, buildingRoomNumber, mentor } = req.body;
 
@@ -82,4 +97,4 @@ const createSection = async (req, res, next) => {
         .json({ section: newSection.toObject({ getters: true }) });
 }
 
-export default { getAllSections, createSection, getSectionsByUserId }
+export default { getAllSections, getSectionsByUserId, getSectionById, createSection }
