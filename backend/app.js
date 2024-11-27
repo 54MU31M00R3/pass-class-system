@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
-import userRouter from './routes/users-routes';
+import userRouter from './routes/users-routes.js';
 
 const app = express();
 

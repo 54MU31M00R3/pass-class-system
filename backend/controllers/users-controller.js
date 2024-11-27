@@ -1,6 +1,6 @@
-import User from '../models/user';
+import User from '../models/user.js';
 
-import faculty from '../faculty.json';
+import faculty from '../faculty.json' with { type: "json" };
 
 const signup = async (req, res, next) => {
     const { username, email, password, yuId } = req.body;
