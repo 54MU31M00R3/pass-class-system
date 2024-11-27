@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 import Content from '../models/content.js';
 import Announcement from '../models/announcement.js';
 import Worksheet from '../models/worksheet.js';
