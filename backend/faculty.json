@@ -1,0 +1,22 @@
+[
+    {
+        "id": 100000003,
+        "role": "pass leader"
+    },
+    {
+        "id": 100000005,
+        "role": "pass leader"
+    },
+    {
+        "id": 100000009,
+        "role": "pass leader"
+    },
+    {
+        "id": 100000006,
+        "role": "supervisor"
+    },
+    {
+        "id": 100000010,
+        "role": "supervisor"
+    }
+]
