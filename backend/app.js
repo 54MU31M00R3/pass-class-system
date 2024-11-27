@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
 import userRouter from './routes/users-routes.js';
+import sectionRouter from './routes/sections-routes.js';
 
 const app = express();
 
@@ -13,6 +14,7 @@ const COLLECTION = 'PASS';
 app.use(bodyParser.json());
 
 app.use('/api/users', userRouter);
+app.use('/api/sections', sectionRouter)
 
 mongoose
     .connect(`mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.e9noz.mongodb.net/${COLLECTION}?retryWrites=true&w=majority&appName=Cluster0`)
