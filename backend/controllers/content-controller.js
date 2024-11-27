@@ -59,8 +59,8 @@ const uploadAnnouncement = async (req, res, next) => {
         session.startTransaction();
         await newAnnouncement.content.save({ session: session });
         await newAnnouncement.save({ session: session });
-        section.content.push(newAnnouncement.content);
-        await section.save({ session: session });
+        currentSection.content.push(newAnnouncement.content);
+        await currentSection.save({ session: session });
         await session.commitTransaction();
     } catch (error) {
         return next(error);
@@ -110,8 +110,8 @@ const uploadWorksheet = async (req, res, next) => {
         session.startTransaction();
         await newWorksheet.content.save({ session: session });
         await newWorksheet.save({ session: session });
-        section.content.push(newWorksheet.content);
-        await section.save({ session: session });
+        currentSection.content.push(newWorksheet.content);
+        await currentSection.save({ session: session });
         await session.commitTransaction();
     } catch (error) {
         return next(error);
