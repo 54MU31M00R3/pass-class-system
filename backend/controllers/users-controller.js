@@ -30,3 +30,5 @@ const signup = async (req, res, next) => {
         .json({ user: newUser.toObject({ getters: true }) });
 
 }
+
+export default { signup };
