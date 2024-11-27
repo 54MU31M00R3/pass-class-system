@@ -10,33 +10,32 @@ function RegisterForm({ formToggler }) {
     const auth = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const registerSubmit = (event) => {
+    const registerSubmit = async (event) => {
         event.preventDefault();
 
-        const facultyMember = faculty.find(employee => employee.id === idNum)
-        let userRole;
-        if (facultyMember) {
-            userRole = facultyMember.role
-        } else {
-            userRole = 'student'
+        const response = await fetch('http://localhost:5000/api/users/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: username.value,
+                email: email.value,
+                yuId: yuId.value,
+                password: password.value
+            })
+        });
+
+        const responseData = await response.json();
+
+        if (!response.ok) {
+            throw new Error(responseData.message);
         }
 
-        const newUser = {
-            username: username.value,
-            email: email.value,
-            id: idNum.value,
-            password: password.value,
-            sectionIds: [],
-            role: userRole 
-        }
-
-        users.push(newUser);
-        console.log(newUser);
-        console.log(users);
-
-        auth.login(idNum.value, userRole);
-        navigate('/')
+        auth.login(responseData.user.id, responseData.user.role);
+        navigate('/');
     }
+
 
     return (
         <>
@@ -47,8 +46,8 @@ function RegisterForm({ formToggler }) {
                         <input id='username' type='text' />
                         <label htmlFor='email'>Email</label>
                         <input id='email' type='email' />
-                        <label htmlFor='idNum'>ID Number</label>
-                        <input id='idNum' type='text' />
+                        <label htmlFor='yuId'>ID Number</label>
+                        <input id='yuId' type='text' />
                         <label htmlFor='password'>Password</label>
                         <input id='password' type='password' />
                         <button type='submit'>SIGNUP</button>
