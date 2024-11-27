@@ -9,12 +9,19 @@ const signup = async (req, res, next) => {
         return employee.id == yuId
     })
 
+    let userRole;
+    if (facultyMember) {
+        userRole = facultyMember.role;
+    } else {
+        userRole = 'student';
+    }
+
     const newUser = new User({
         username,
         email,
         password,
         yuId,
-        role: facultyMember.role,
+        role: userRole,
         sections: []
     })
 
