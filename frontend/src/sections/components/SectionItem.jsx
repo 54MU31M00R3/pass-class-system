@@ -4,7 +4,7 @@ import { AuthContext } from '../../shared/context/auth-context';
 
 import { Link } from 'react-router-dom';
 
-function SectionItem({ id, courseName, courseSection, timeOfSession, buildingRoomNumber }) {
+function SectionItem({ sectionId, courseName, courseSection, timeOfSession, buildingRoomNumber }) {
     const auth = useContext(AuthContext);
 
     return (
@@ -18,7 +18,7 @@ function SectionItem({ id, courseName, courseSection, timeOfSession, buildingRoo
                     <li>Time: {timeOfSession}</li>
                     <li>Location: {buildingRoomNumber}</li>
                 </div>
-                <Link className='sectionLink' to={auth.isLoggedIn && `/${id}/section` || !auth.isLoggedIn && '/login'}>VIEW</Link>
+                <Link className='sectionLink' to={auth.isLoggedIn && `/${sectionId}/section` || !auth.isLoggedIn && '/login'}>VIEW</Link>
             </div>
         </ul>
     )

@@ -10,8 +10,8 @@ function SectionsList({ loadedSections }) {
             <div className='sectionsContainer'>
                 {loadedSections.map((section) => {
                     return <SectionItem
-                        key={section.sectionId}
-                        id={section.sectionId}
+                        key={section.id}
+                        sectionId={section.id}
                         courseName={section.courseName}
                         courseSection={section.courseSection}
                         timeOfSession={section.timeOfSession}
