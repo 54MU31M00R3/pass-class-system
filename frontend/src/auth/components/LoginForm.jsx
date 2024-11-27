@@ -26,8 +26,6 @@ function LoginForm({ formToggler }) {
         const responseData = await response.json();
 
         if (!response.ok) {
-            email.value = '';
-            password.value = '';
             throw new Error(responseData.message);
         }
 
