@@ -9,17 +9,30 @@ function LoginForm({ formToggler }) {
     const auth = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const loginSubmit = (event) => {
+    const loginSubmit = async (event) => {
         event.preventDefault();
 
-        const foundUser = users.find(user => (user.email === email.value));
-        if (foundUser && (foundUser.password === password.value)){
-            auth.login(foundUser.id, foundUser.role);
-            navigate('/');
-        } else {
+        const response = await fetch('http://localhost:5000/api/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email.value,
+                password: password.value
+            })
+        });
+
+        const responseData = await response.json();
+
+        if (!response.ok) {
             email.value = '';
             password.value = '';
+            throw new Error(responseData.message);
         }
+
+        auth.login(responseData.user.id, responseData.user.role);
+        navigate('/');
     }
 
     return (
