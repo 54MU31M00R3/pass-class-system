@@ -38,4 +38,24 @@ const signup = async (req, res, next) => {
 
 }
 
-export default { signup };
+const login = async (req, res, next) => {
+    const { email, password } = req.body;
+
+    let foundUser;
+    try {
+        foundUser = await User.findOne({ email: email });
+    } catch (error) {
+        error.code = 500;
+        return next(error);
+    }
+
+    if (!foundUser || foundUser.password !== password){
+        const error = new Error('Login Failed');
+        error.code = 401;
+        return next(error);
+    }
+
+    res.json({ message: 'Login Successful', user: foundUser.toObject({ getters: true }) });
+}
+
+export default { signup, login };
