@@ -10,6 +10,8 @@ router.get('/user/:userId', sectionsController.getSectionsByUserId)
 
 router.get('/section/:sectionId', sectionsController.getSectionById)
 
+router.get('/section/:sectionId/user/:userId', sectionsController.enrolSection)
+
 router.post('/create', sectionsController.createSection);
 
 export default router;

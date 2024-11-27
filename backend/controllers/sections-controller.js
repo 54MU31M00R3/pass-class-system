@@ -97,4 +97,63 @@ const createSection = async (req, res, next) => {
         .json({ section: newSection.toObject({ getters: true }) });
 }
 
-export default { getAllSections, getSectionsByUserId, getSectionById, createSection }
+const enrolSection = async (req, res, next) => {
+    const userId = req.params.userId;
+    const sectionId = req.params.sectionId;
+
+    console.log(userId);
+    console.log(sectionId)
+
+    let user;
+
+    try {
+        user = await User.findById(userId).exec();
+    } catch (error) {
+        error.code = 500;
+        return next(error);
+    }
+
+    if (!user) {
+        const error = new Error('user not found');
+        error.code = 404;
+        return next(error);
+
+    }
+
+    let section;
+
+    try {
+        section = await Section.findById(sectionId).exec();
+    } catch (error) {
+        error.code = 500;
+        return next(error);
+    }
+
+    if (!section) {
+        const error = new Error('section not found');
+        error.code = 404;
+        return next(error);
+
+    }
+
+    try {
+        const session = await mongoose.startSession();
+        session.startTransaction();
+        section.students.push(user);
+        await section.save({ session: session });
+        user.sections.push(section);
+        await user.save({ session: session });
+        await session.commitTransaction();
+    } catch (error) {
+        return next(error);
+    }
+
+    res
+        .status(201)
+        .json({
+            section: section.toObject({ getters: true }),
+            user: user.toObject({ getters: true })
+        });
+}
+
+export default { getAllSections, getSectionsByUserId, getSectionById, createSection, enrolSection }
