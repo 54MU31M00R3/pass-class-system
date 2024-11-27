@@ -6,11 +6,17 @@ import userRouter from './routes/users-routes.js';
 import sectionRouter from './routes/sections-routes.js';
 import contentRouter from './routes/content-routes.js';
 
-const app = express();
-
 const USERNAME = process.env.USERNAME;
 const PASSWORD = process.env.PASSWORD;
 const COLLECTION = 'PASS';
+
+const app = express();
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+})
 
 app.use(bodyParser.json());
 
