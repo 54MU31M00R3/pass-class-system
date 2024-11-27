@@ -4,12 +4,12 @@ import Section from '../models/section.js';
 import User from '../models/user.js';
 
 const createSection = async (req, res, next) => {
-    const { courseName, courseSection, timeofSession, buildingRoomNumber, mentor } = req.body;
+    const { courseName, courseSection, timeOfSession, buildingRoomNumber, mentor } = req.body;
 
     const newSection = new Section({
         courseName,
         courseSection,
-        timeofSession,
+        timeOfSession,
         buildingRoomNumber,
         mentor
     })
