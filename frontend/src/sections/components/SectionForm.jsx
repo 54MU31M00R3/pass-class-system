@@ -9,22 +9,30 @@ function SectionForm() {
     const auth = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const createSectionHandler = (event) => {
+    const createSectionHandler = async (event) => {
         event.preventDefault();
 
-        const newSection = {
-            sectionId: Math.floor(Math.random() * 100),
-            courseName: courseName.value,
-            courseSection: courseSection.value,
-            timeOfSession: timeOfSession.value,
-            buildingRoomNumber: buildingRoomNumber.value,
-            studentIds: [],
-            mentorId: auth.userId
+        const response = await fetch('http://localhost:5000/api/sections/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                courseName: courseName.value,
+                courseSection: courseSection.value,
+                timeOfSession: timeOfSession.value,
+                buildingRoomNumber: buildingRoomNumber.value,
+                mentor: auth.userId
+            })
+        });
+
+        const responseData = await response.json();
+
+        if (!response.ok) {
+            throw new Error(responseData.message);
         }
 
-        sections.push(newSection);
-
-        navigate('/')
+        navigate(`/${auth.userId}/dashboard`);
     }
 
     return (
