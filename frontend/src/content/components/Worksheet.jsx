@@ -25,7 +25,7 @@ function Worksheet({ content }) {
 
   const worksheetLinkHandler = (event) => {
     event.preventDefault();
-    console.log(worksheet.filePath)
+    console.log(loadedWorksheet.filePath)
   }
 
   return (
