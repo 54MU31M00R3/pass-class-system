@@ -24,6 +24,36 @@ const getContentBySectionId = async (req, res, next) => {
     })
 }
 
+const getWorksheet = async (req, res, next) => {
+    const contentId = req.params.contentId;
+
+    let worksheet;
+
+    try {
+        worksheet = await Worksheet.findById(contentId).exec();
+    } catch (error) {
+        error.code = 500;
+        return next(error);
+    }
+
+    res.json({ worksheet: worksheet.toObject({ getters: true }) });
+}
+
+const getAnnouncement = async (req, res, next) => {
+    const contentId = req.params.contentId;
+
+    let announcement;
+
+    try {
+        announcement = await Announcement.findById(contentId).exec();
+    } catch (error) {
+        error.code = 500;
+        return next(error);
+    }
+
+    res.json({ announcement: announcement.toObject({ getters: true }) });
+}
+
 const uploadAnnouncement = async (req, res, next) => {
     const { section, contentType, title, mentor, body } = req.body;
 
@@ -127,4 +157,4 @@ const uploadWorksheet = async (req, res, next) => {
 
 
 
-export default { getContentBySectionId, uploadWorksheet, uploadAnnouncement}
+export default { getContentBySectionId, getWorksheet, getAnnouncement, uploadWorksheet, uploadAnnouncement }

@@ -26,7 +26,7 @@ function SectionOverview() {
             setIsLoading(false);
         }
         fetchSection();
-        console.log(loadedSection)
+
     }, [])
 
     return (
