@@ -15,29 +15,29 @@ function WorksheetForm({ formToggler }) {
         formToggler(mode);
     }
 
-    const worksheetSubmit = (event) => {
+    const worksheetSubmit = async (event) => {
         event.preventDefault();
 
-        const contentId = Math.floor(Math.random() * 100);
+        const response = await fetch('http://localhost:5000/api/content/worksheet', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                section: sectionId,
+                contentType: 'worksheet',
+                title: title.value,
+                mentor: auth.userId,
+                filePath: 'files/worksheet1'
+            })
+        });
 
-        const currentDate = new Date().toDateString();
+        const responseData = await response.json();
 
-        const newContent = {
-            contentId: contentId,
-            sectionId: sectionId,
-            contentType: 'worksheet',
-            title: title.value,
-            datePosted: currentDate
+        if (!response.ok) {
+            throw new Error(responseData.message);
         }
-
-        const newAnnouncement = {
-            contentId: contentId,
-            contentType: 'worksheet',
-            filePath: 'placeholderPath'
-        }
-
-        content.push(newContent);
-        worksheets.push(newAnnouncement);
+        
         navigate(`/${sectionId}/section`);
     }
     return (

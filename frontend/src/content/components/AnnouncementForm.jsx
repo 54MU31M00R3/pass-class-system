@@ -15,29 +15,29 @@ function AnnouncementForm({ formToggler }) {
         formToggler(mode);
     }
 
-    const announcementSubmit = (event) => {
+    const announcementSubmit = async (event) => {
         event.preventDefault();
 
-        const contentId = Math.floor(Math.random() * 100);
+        const response = await fetch('http://localhost:5000/api/content/announcement', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                section: sectionId,
+                contentType: 'announcement',
+                title: title.value,
+                mentor: auth.userId,
+                body: announcement.value
+            })
+        });
 
-        const currentDate = new Date().toDateString();
+        const responseData = await response.json();
 
-        const newContent = {
-            contentId: contentId,
-            sectionId: sectionId,
-            contentType: 'announcement',
-            title: title.value,
-            datePosted: currentDate
+        if (!response.ok) {
+            throw new Error(responseData.message);
         }
-
-        const newAnnouncement = {
-            contentId: contentId,
-            contentType: 'announcement',
-            text: announcement.value
-        }
-
-        content.push(newContent);
-        announcements.push(newAnnouncement);
+        
         navigate(`/${sectionId}/section`);
     }
 
@@ -49,7 +49,7 @@ function AnnouncementForm({ formToggler }) {
                         <label htmlFor='title'>Title</label>
                         <input id='title' type='text' />
                         <label htmlFor='announcement'>Announcement</label>
-                        <textarea id='announcement'/>
+                        <textarea name='announcement'/>
                         <button onClick={announcementSubmit}>Post</button>
                     </form>
                     <label htmlFor='selectedmode'>Select Upload Type</label>
