@@ -30,7 +30,7 @@ const getWorksheet = async (req, res, next) => {
     let worksheet;
 
     try {
-        worksheet = await Worksheet.findById(contentId).exec();
+        worksheet = await Worksheet.findOne({ content: contentId }).exec();
     } catch (error) {
         error.code = 500;
         return next(error);
@@ -45,7 +45,7 @@ const getAnnouncement = async (req, res, next) => {
     let announcement;
 
     try {
-        announcement = await Announcement.findById(contentId).exec();
+        announcement = await Announcement.findOne({ content: contentId }).exec();
     } catch (error) {
         error.code = 500;
         return next(error);

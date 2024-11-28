@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '../../shared/context/auth-context';
 
 import content from '../../assets/dummyData/content.json';
 import announcements from '../../assets/dummyData/announcement.json';
 
 function AnnouncementForm({ formToggler }) {
+    const auth = useContext(AuthContext);
     const sectionId = useParams().sectionId;
     const navigate = useNavigate();
 
@@ -49,7 +52,7 @@ function AnnouncementForm({ formToggler }) {
                         <label htmlFor='title'>Title</label>
                         <input id='title' type='text' />
                         <label htmlFor='announcement'>Announcement</label>
-                        <textarea name='announcement'/>
+                        <textarea id='announcement'/>
                         <button onClick={announcementSubmit}>Post</button>
                     </form>
                     <label htmlFor='selectedmode'>Select Upload Type</label>

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '../../shared/context/auth-context';
 
 import content from '../../assets/dummyData/content.json';
 import worksheets from '../../assets/dummyData/worksheet.json';
 
 function WorksheetForm({ formToggler }) {
+    const auth = useContext(AuthContext);
     const sectionId = useParams().sectionId;
     const navigate = useNavigate();
     

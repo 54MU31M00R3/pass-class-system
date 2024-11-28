@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Announcement from '../../content/components/Announcement';
 import Worksheet from '../../content/components/Worksheet';
@@ -30,9 +30,9 @@ function SectionContent({ sectionId }) {
     <>
       {!isLoading && loadedContent && loadedContent.map(content => {
         if (content.contentType === 'worksheet') {
-          return <Worksheet key={content.contentId} content={content} />
+          return <Worksheet key={content.id} content={content} />
         } else if (content.contentType === 'announcement') {
-          return <Announcement key={content.contentId} content={content} />
+          return <Announcement key={content.id} content={content} />
         }
       })}
     </>
