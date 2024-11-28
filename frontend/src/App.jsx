@@ -30,7 +30,7 @@ function App() {
     setIsLoggedIn(false);
     setUserId(null);
     setRole(null)
-  })
+  }, [])
 
   let router;
 
