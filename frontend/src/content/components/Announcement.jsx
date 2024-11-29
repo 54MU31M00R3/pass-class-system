@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
 
-import annoucements from '../../assets/dummyData/announcement.json'
+// component that accepts a content object and
+// finds the related worksheet through its ids
+// then returns the details for the worksheet 
 
-function Announcement({ content }) {  
+function Announcement({ content }) {
+  // keeps track of the announcement loading state
   const [isLoading, setIsLoading] = useState(false);
+  // used to set the announcement once loaded
   const [loadedAnnouncement, setLoadedAnnouncement] = useState();
+  // formats date from retrieved content to be displayed in a user friendly manner
   const datePosted = new Date(content.datePosted).toDateString();
 
-
+  // get request for specific announcement details
   useEffect(() => {
     const fetchAnnouncement = async () => {
       setIsLoading(true);
@@ -27,6 +32,8 @@ function Announcement({ content }) {
 
   return (
     <>
+    {/* upon loading and existing the content's details will be displayed along
+          with its associated announcements details */}
       {!isLoading && loadedAnnouncement && <div>
         <ul className='contentHeader'>
           <li>{content.title}</li>

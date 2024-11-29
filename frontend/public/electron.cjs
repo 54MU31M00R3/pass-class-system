@@ -1,5 +1,9 @@
 const { app, BrowserWindow } = require('electron')
 
+// attempt to create an executable using electron js
+// unable to combine with backend since a cloud based
+// database service was used
+
 app.disableHardwareAcceleration();
 
 const createWindow = () => {

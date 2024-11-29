@@ -3,15 +3,20 @@ import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../shared/context/auth-context';
 
-import users from '../../assets/dummyData/users.json';
+// this form allows a user to login and access their account
 
 function LoginForm({ formToggler }) {
+    // used to log the user in upon a successful post request
     const auth = useContext(AuthContext);
+    // used to redirect the user
     const navigate = useNavigate();
 
+    // submit handler used to send a post request and check user credentials
     const loginSubmit = async (event) => {
+        // prevent button from reloading page
         event.preventDefault();
 
+        // post request to check entered account details
         const response = await fetch('http://localhost:5000/api/users/login', {
             method: 'POST',
             headers: {
@@ -29,12 +34,16 @@ function LoginForm({ formToggler }) {
             throw new Error(responseData.message);
         }
 
+        // logs user in with associated credentials
         auth.login(responseData.user.id, responseData.user.role);
+        // navigates user to homepage
         navigate('/');
     }
 
     return (
         <>
+            {/* form used to accept inputs to login, incuding
+                a email and password */}
             <div className='formContainer'>
                 <div className='subFormContainer'>
                     <form className='formDetails' onSubmit={loginSubmit}>

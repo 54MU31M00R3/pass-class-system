@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
-import worksheets from '../../assets/dummyData/worksheet.json'
+// component that accepts a content object and
+// finds the related worksheet through its ids
+// then returns the details for the worksheet 
 
 function Worksheet({ content }) {
+  // keeps track of the worksheets loading state
   const [isLoading, setIsLoading] = useState(false);
+  // used to set the worksheet once loaded
   const [loadedWorksheet, setLoadedWorksheet] = useState();
+  // formats date from retrieved content to be displayed in a user friendly manner
   const datePosted = new Date(content.datePosted).toDateString();
 
+  // get request for specific worksheet details
   useEffect(() => {
     const fetchWorksheet = async () => {
       setIsLoading(true);
@@ -24,6 +30,7 @@ function Worksheet({ content }) {
 
   }, [])
 
+  // placeholder for on click behaviour for accessing worksheet
   const worksheetLinkHandler = (event) => {
     event.preventDefault();
     console.log(loadedWorksheet.filePath)
@@ -31,6 +38,8 @@ function Worksheet({ content }) {
 
   return (
     <>
+      {/* upon loading and existing the content's details will be displayed along
+          with its associated worksheets details */}
       {!isLoading && loadedWorksheet && <div>
         <ul className='contentHeader'>
           <li>{content.title}</li>

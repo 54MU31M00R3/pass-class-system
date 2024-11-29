@@ -3,15 +3,22 @@ import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../shared/context/auth-context';
 
-import sections from '../../assets/dummyData/sections.json';
+// this component will accept data from a user that
+// is a pass leader and send a post request to the
+// backend to create a new section
 
 function SectionForm() {
+    // tracks user credentials
     const auth = useContext(AuthContext);
+    // forces the user to go to a specific url
     const navigate = useNavigate();
 
+    // on submit function attached to the form element
     const createSectionHandler = async (event) => {
+        // prevent default behaviour of reloading the page
         event.preventDefault();
 
+        // sends post request to backend
         const response = await fetch('http://localhost:5000/api/sections/create', {
             method: 'POST',
             headers: {
@@ -37,6 +44,7 @@ function SectionForm() {
 
     return (
         <>
+            {/* layout to accept input from user to make sections */}
             <div className='formContainer'>
                 <div className='subFormContainer'>
                     <form className='formDetails'>

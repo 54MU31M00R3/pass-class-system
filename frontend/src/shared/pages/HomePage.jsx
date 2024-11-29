@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 import SectionsList from '../../sections/components/SectionsList';
 
-import sections from '../../assets/dummyData/sections.json';
+// this component allows users to view all currently available pass sections
 
 function HomePage() {
+    // tracks if content is loaded before displaying anything
     const [isLoading, setIsLoading] = useState(false);
+    // used to store data fetched from the backend
     const [loadedSections, setLoadedSections] = useState();
 
+    // get request to backend for all sections
     useEffect(() => {
         const fetchSections = async () => {
             setIsLoading(true);
@@ -27,7 +30,8 @@ function HomePage() {
 
     return (
         <>
-            { !isLoading && loadedSections && <SectionsList loadedSections={loadedSections} />}
+            {/* once the data has been fetched and if there is any data at all this component will be loaded */}
+            {!isLoading && loadedSections && <SectionsList loadedSections={loadedSections} />}
         </>
     )
 }

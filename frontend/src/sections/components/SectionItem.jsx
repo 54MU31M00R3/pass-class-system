@@ -4,6 +4,10 @@ import { AuthContext } from '../../shared/context/auth-context';
 
 import { Link } from 'react-router-dom';
 
+// this component receives sections details from 
+// the SectionList component and styles them to 
+// be viewed on the homepage or dashboard
+
 function SectionItem({ sectionId, courseName, courseSection, timeOfSession, buildingRoomNumber }) {
     const auth = useContext(AuthContext);
 

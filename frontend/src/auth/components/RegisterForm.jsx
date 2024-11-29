@@ -3,16 +3,19 @@ import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../shared/context/auth-context';
 
-import users from '../../assets/dummyData/users.json';
-import faculty from '../../assets/dummyData/faculty.json';
+// this component will allow a user to register for an account
 
 function RegisterForm({ formToggler }) {
+    // will be user to log the user in if account creation is successful
     const auth = useContext(AuthContext);
+    // will be used to redirect the user upon account creation
     const navigate = useNavigate();
 
+    // on submit handler used to send a post request to create an account
     const registerSubmit = async (event) => {
+        // prevent default behaviour of button to refresh page
         event.preventDefault();
-
+        // post request to create account
         const response = await fetch('http://localhost:5000/api/users/signup', {
             method: 'POST',
             headers: {
@@ -31,14 +34,17 @@ function RegisterForm({ formToggler }) {
         if (!response.ok) {
             throw new Error(responseData.message);
         }
-
+        // logs user in and sets associated credentials
         auth.login(responseData.user.id, responseData.user.role);
+        // redirect user to homepage
         navigate('/');
     }
 
 
     return (
         <>
+            {/* form used to accept inputs to create user accounts, incuding
+                a username, email, password, and yuId, no validation has been created yet */}
             <div className='formContainer'>
                 <div className='subFormContainer'>
                     <form className='formDetails' onSubmit={registerSubmit}>
