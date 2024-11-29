@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
+// model schema for a section
 const sectionSchema = new Schema({
     courseName: { type: String, required: true },
     courseSection: { type: String, required: true },
