@@ -10,6 +10,9 @@ function RegisterForm({ formToggler }) {
     const auth = useContext(AuthContext);
     // will be used to redirect the user upon account creation
     const navigate = useNavigate();
+    const labelClass = 'text-lg font-medium';
+    const formInput = 'flex flex-col pb-5';
+    const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
 
     // on submit handler used to send a post request to create an account
     const registerSubmit = async (event) => {
@@ -45,20 +48,35 @@ function RegisterForm({ formToggler }) {
         <>
             {/* form used to accept inputs to create user accounts, incuding
                 a username, email, password, and yuId, no validation has been created yet */}
-            <div className='formContainer'>
-                <div className='subFormContainer'>
-                    <form className='formDetails' onSubmit={registerSubmit}>
-                        <label htmlFor='username'>Username</label>
-                        <input id='username' type='text' />
-                        <label htmlFor='email'>Email</label>
-                        <input id='email' type='email' />
-                        <label htmlFor='yuId'>ID Number</label>
-                        <input id='yuId' type='text' />
-                        <label htmlFor='password'>Password</label>
-                        <input id='password' type='password' />
-                        <button type='submit'>SIGNUP</button>
-                    </form>
-                    <button className='formToggler' onClick={formToggler}>SWITCH TO LOGIN</button>
+            <div className='w-full flex justify-center text-center pt-5'>
+                <div className='flex flex-col justify-between h-full  w-96 text-center rounded-md shadow-lg border-2 bg-gray-100'>
+                    <h1 className='text-3xl font-black text-red-600 pt-5'>
+                        Signup
+                    </h1>
+                    <div className='flex justify-around pb-10'>
+                        <form className='flex flex-col gap-5 text-left w-64 pt-8' onSubmit={registerSubmit}>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='username'>Username</label>
+                                <input id='username' type='text' />
+                            </div>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='email'>Email</label>
+                                <input id='email' type='email' />
+                            </div>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='yuId'>YU ID</label>
+                                <input id='yuId' type='text' />
+                            </div>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='password'>Password</label>
+                                <input id='password' type='password' />
+                            </div>
+                            <div className='flex justify-between '>
+                                <button className={buttonClass} type='button' onClick={formToggler}>Switch to Login</button>
+                                <button className={buttonClass} type='submit'>Signup</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </>

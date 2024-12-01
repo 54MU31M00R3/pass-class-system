@@ -10,6 +10,9 @@ function LoginForm({ formToggler }) {
     const auth = useContext(AuthContext);
     // used to redirect the user
     const navigate = useNavigate();
+    const labelClass = 'text-lg font-medium';
+    const formInput = 'flex flex-col pb-8';
+    const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
 
     // submit handler used to send a post request and check user credentials
     const loginSubmit = async (event) => {
@@ -44,16 +47,27 @@ function LoginForm({ formToggler }) {
         <>
             {/* form used to accept inputs to login, incuding
                 a email and password */}
-            <div className='formContainer'>
-                <div className='subFormContainer'>
-                    <form className='formDetails' onSubmit={loginSubmit}>
-                        <label htmlFor='email'>Email</label>
-                        <input id='email' type='email' />
-                        <label htmlFor='password'>Password</label>
-                        <input id='password' type='password' />
-                        <button type='submit'>LOGIN</button>
-                    </form>
-                    <button className='formToggler' onClick={formToggler}>SWITCH TO SIGNUP</button>
+            <div className='w-full flex justify-center text-center pt-5'>
+                <div className='flex flex-col justify-between h-96  w-96 text-center rounded-md shadow-lg border-2 bg-gray-100'>
+                    <h1 className='text-3xl font-black text-red-600 pt-5'>
+                        Login
+                    </h1>
+                    <div className='flex justify-around pb-10'>
+                        <form className='flex flex-col gap-5 text-left w-64' onSubmit={loginSubmit}>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='email'>Email</label>
+                                <input id='email' type='email' />
+                            </div>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='password'>Password</label>
+                                <input id='password' type='password' />
+                            </div>
+                            <div className='flex justify-between '>
+                                <button className={buttonClass} type='button' onClick={formToggler}>Switch to Signup</button>
+                                <button className={buttonClass} type='submit'>Login</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </>
