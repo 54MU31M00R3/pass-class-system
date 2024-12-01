@@ -4,6 +4,23 @@ import User from '../models/user.js';
 // be assigned a faculty role
 import faculty from '../faculty.json' with { type: "json" };
 
+const getUserById = async (req, res, next) => {
+    const userId = req.params.userId;
+
+    let user;
+    try {
+        user = await User.findById(userId).exec();
+    } catch (error) {
+        return next(error)
+    }
+
+    if (!user) {
+        return next(error);
+    }
+
+    res.json({ user: user.toObject({ getters: true }) });
+}
+
 // function used to create a user account
 const signup = async (req, res, next) => {
     // retrieve json data from post request
@@ -75,4 +92,4 @@ const login = async (req, res, next) => {
     res.json({ message: 'Login Successful', user: foundUser.toObject({ getters: true }) });
 }
 
-export default { signup, login };
+export default { getUserById, signup, login };

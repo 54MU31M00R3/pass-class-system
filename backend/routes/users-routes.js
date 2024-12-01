@@ -5,6 +5,8 @@ import usersController from '../controllers/users-controller.js';
 // create router for user requests
 const router = express.Router();
 
+router.get('/user/:userId', usersController.getUserById)
+
 // post request calls signup function from controller
 router.post('/signup', usersController.signup)
 

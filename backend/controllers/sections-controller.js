@@ -9,7 +9,7 @@ const getAllSections = async (req, res, next) => {
     // queries all existing sections and returns them without the students, and mentor field
     let sections;
     try {
-        sections = await Section.find({}, '-students -mentor');
+        sections = await Section.find({}, '');
     } catch (error) {
         error.code = 500;
         return next(error);

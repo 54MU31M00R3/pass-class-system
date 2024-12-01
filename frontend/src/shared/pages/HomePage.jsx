@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import SectionsList from '../../sections/components/SectionsList';
+import Hero from '../components/Hero';
 
 // this component allows users to view all currently available pass sections
 
@@ -30,6 +31,14 @@ function HomePage() {
 
     return (
         <>
+            <Hero />
+            <div className='w-full flex justify-center text-center pt-5'>
+                <div className='flex flex-col justify-center h-16  w-96 text-center rounded-full shadow-lg border-2 border-slate-50 '>
+                    <h1 className='text-3xl font-black text-red-600'>
+                        Browse Sections
+                    </h1>
+                </div>
+            </div>
             {/* once the data has been fetched and if there is any data at all this component will be loaded */}
             {!isLoading && loadedSections && <SectionsList loadedSections={loadedSections} />}
         </>
