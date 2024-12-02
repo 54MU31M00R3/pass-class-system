@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../shared/context/auth-context';
+import { toast } from 'react-toastify';
 
 // this component holds the form which the user can submit
 // to create an announcement. 
@@ -51,7 +52,9 @@ function AnnouncementForm({ formToggler }) {
             throw new Error(responseData.message);
         }
 
-        navigate(`/${sectionId}/section`);
+        toast.success('Announcement Posted');
+
+        return navigate(`/${sectionId}/section`);
     }
 
     return (

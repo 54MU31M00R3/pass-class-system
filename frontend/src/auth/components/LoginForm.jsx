@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../shared/context/auth-context';
+import { toast } from 'react-toastify';
 
 // this form allows a user to login and access their account
 
@@ -20,27 +21,33 @@ function LoginForm({ formToggler }) {
         event.preventDefault();
 
         // post request to check entered account details
-        const response = await fetch('http://localhost:5000/api/users/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email.value,
-                password: password.value
-            })
-        });
+        try {
+            const response = await fetch('http://localhost:5000/api/users/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email.value,
+                    password: password.value
+                })
+            });
 
-        const responseData = await response.json();
+            const responseData = await response.json();
 
-        if (!response.ok) {
-            throw new Error(responseData.message);
+            if (!response.ok) {
+                throw new Error(responseData.message);
+            }
+
+            toast.success('Login Successful')
+
+            // logs user in with associated credentials
+            auth.login(responseData.user.id, responseData.user.role);
+            // navigates user to homepage
+            return navigate('/');
+        } catch (error) {
+            toast.error('Credentials Invalid');
         }
-
-        // logs user in with associated credentials
-        auth.login(responseData.user.id, responseData.user.role);
-        // navigates user to homepage
-        navigate('/');
     }
 
     return (

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { AuthContext } from '../../shared/context/auth-context';
 
@@ -53,7 +54,9 @@ function WorksheetForm({ formToggler }) {
             throw new Error(responseData.message);
         }
 
-        navigate(`/${sectionId}/section`);
+        toast.success('Worksheet Uploaded')
+
+        return navigate(`/${sectionId}/section`);
     }
     return (
         <>

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../shared/context/auth-context';
+import { toast } from 'react-toastify';
 
 // this component will accept data from a user that
 // is a pass leader and send a post request to the
@@ -42,7 +43,9 @@ function SectionForm() {
             throw new Error(responseData.message);
         }
 
-        navigate(`/${auth.userId}/dashboard`);
+        toast.success('Section Created');
+
+        return navigate(`/${auth.userId}/dashboard`);
     }
 
     return (
@@ -54,7 +57,7 @@ function SectionForm() {
                         Section
                     </h1>
                     <div className='flex justify-around pb-10'>
-                        <form className='flex flex-col gap-5 text-left w-64 pt-8' onClick={createSectionHandler}>
+                        <form className='flex flex-col gap-5 text-left w-64 pt-8' onSubmit={createSectionHandler}>
                             <div className={formInput}>
                                 <label className={labelClass} htmlFor='courseName'>Course Name</label>
                                 <input id='courseName' type='text' />
