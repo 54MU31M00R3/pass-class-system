@@ -40,13 +40,15 @@ function Worksheet({ content }) {
     <>
       {/* upon loading and existing the content's details will be displayed along
           with its associated worksheets details */}
-      {!isLoading && loadedWorksheet && <div>
-        <ul className='contentHeader'>
-          <li>{content.title}</li>
-          <li>{datePosted}</li>
-        </ul>
-        <a className='worksheet' onClick={worksheetLinkHandler} href={loadedWorksheet.filePath}>View Worksheet</a>
-      </div>}
+      <div className='flex justify-center h-48 text-lg'>
+        {!isLoading && loadedWorksheet && <div className='flex flex-col justify-between h-42 w-1/2 mt-5 p-8 shadow-md rounded-lg bg-gray-100'>
+          <ul className='flex justify-between'>
+            <li className='font-black'>{content.title}</li>
+            <li className='font-black'>{datePosted}</li>
+          </ul>
+          <a onClick={worksheetLinkHandler} href={loadedWorksheet.filePath}>View Worksheet</a>
+        </div>}
+      </div>
     </>
   )
 }

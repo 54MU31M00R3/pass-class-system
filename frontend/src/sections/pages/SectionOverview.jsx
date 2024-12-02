@@ -2,8 +2,9 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import SectionContent from '../components/SectionContent';
-import sections from '../../assets/dummyData/sections.json';
 import { AuthContext } from '../../shared/context/auth-context';
+import OverviewHero from '../components/OverviewHero';
+
 
 // this component will provide a view of all content
 // related to a section such as workhsheets and announcements
@@ -39,8 +40,15 @@ function SectionOverview() {
 
     return (
         <>
-            {!isLoading && loadedSection && <div className="contentContainer">
-                {(auth.userId == loadedSection.mentor) && <Link className='uploadLink' to={`/${sectionId}/section/content/upload`}>Upload Content</Link>}
+            {!isLoading && loadedSection && <div className="">
+                <OverviewHero
+                    sectionId={loadedSection.id}
+                    courseName={loadedSection.courseName}
+                    courseSection={loadedSection.courseSection}
+                    timeOfSession={loadedSection.timeOfSession}
+                    buildingRoomNumber={loadedSection.buildingRoomNumber}
+                    mentor={loadedSection.mentor}
+                />
                 <SectionContent sectionId={sectionId} />
             </div>}
         </>

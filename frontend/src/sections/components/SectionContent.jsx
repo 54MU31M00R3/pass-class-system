@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Announcement from '../../content/components/Announcement';
 import Worksheet from '../../content/components/Worksheet';
+import OverviewHero from './OverviewHero';
 
 // component used to retrieve content such as announcements
 // and worksheets to be displayed on the section overview page
@@ -34,13 +35,22 @@ function SectionContent({ sectionId }) {
     <>
       {/* will display content only if the content has been loaded and exists 
           however the content must first be processed by their respective components*/}
-      {!isLoading && loadedContent && loadedContent.map(content => {
-        if (content.contentType === 'worksheet') {
-          return <Worksheet key={content.id} content={content} />
-        } else if (content.contentType === 'announcement') {
-          return <Announcement key={content.id} content={content} />
-        }
-      })}
+      <div className='w-full flex justify-center text-center pt-5'>
+                <div className='flex flex-col justify-center h-16  w-1/2 text-center rounded-full shadow-lg border-2 border-slate-50 '>
+                    <h1 className='text-3xl font-black text-red-600'>
+                        Announcements and Worksheets
+                    </h1>
+                </div>
+            </div>
+      <div className='flex flex-col gap-10 mt-10'>
+        {!isLoading && loadedContent && loadedContent.map(content => {
+          if (content.contentType === 'worksheet') {
+            return <Worksheet key={content.id} content={content} />
+          } else if (content.contentType === 'announcement') {
+            return <Announcement key={content.id} content={content} />
+          }
+        })}
+      </div>
     </>
   )
 }

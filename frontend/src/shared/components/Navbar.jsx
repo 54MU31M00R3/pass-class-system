@@ -15,7 +15,7 @@ function Navbar() {
 
     return (
         <>
-            <div className='flex h-24 justify-between items-center bg-red-600 pb-1'>
+            <div className='flex h-24 justify-between items-center bg-red-600 pb-1 border-red-500 border-2'>
                 <div className='flex items-center'>
                     <img className='object-cover h-20 w-20 scale-125 overflow-hidden ml-2' src={logo} alt='YorkULogo'/>
                     <h1 className='pl-6 text-6xl text-white font-black'>Pass Class</h1>

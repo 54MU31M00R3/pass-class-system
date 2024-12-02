@@ -34,15 +34,17 @@ function Announcement({ content }) {
     <>
     {/* upon loading and existing the content's details will be displayed along
           with its associated announcements details */}
-      {!isLoading && loadedAnnouncement && <div>
-        <ul className='contentHeader'>
-          <li>{content.title}</li>
-          <li>{datePosted}</li>
-        </ul>
-        <div className='announcement'>
-          {loadedAnnouncement.body}
-        </div>
-      </div>}
+      <div className='flex justify-center h-48 text-lg'>
+        {!isLoading && loadedAnnouncement && <div className='flex flex-col justify-between h-42 w-1/2 mt-5 p-8 shadow-md rounded-lg bg-gray-100'>
+          <ul className='flex justify-between'>
+            <li className='font-black'>{content.title}</li>
+            <li className='font-black'>{datePosted}</li>
+          </ul>
+          <div>
+            {loadedAnnouncement.body}
+          </div>
+        </div>}
+      </div>
     </>
   )
 }

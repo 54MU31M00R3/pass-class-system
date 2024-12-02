@@ -8,6 +8,9 @@ import { AuthContext } from '../../shared/context/auth-context';
 // backend to create a new section
 
 function SectionForm() {
+    const labelClass = 'text-lg font-medium';
+    const formInput = 'flex flex-col pb-5';
+    const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
     // tracks user credentials
     const auth = useContext(AuthContext);
     // forces the user to go to a specific url
@@ -45,19 +48,34 @@ function SectionForm() {
     return (
         <>
             {/* layout to accept input from user to make sections */}
-            <div className='formContainer'>
-                <div className='subFormContainer'>
-                    <form className='formDetails'>
-                        <label htmlFor='courseName'>Course Name</label>
-                        <input id='courseName' type='text' />
-                        <label htmlFor='courseSection'>Course Section</label>
-                        <input id='courseSection' type='text' />
-                        <label htmlFor='timeOfSession'>Time of Session</label>
-                        <input id='timeOfSession' type='text' />
-                        <label htmlFor='buildingRoomNumber'>Location</label>
-                        <input id='buildingRoomNumber' type='text' />
-                        <button onClick={createSectionHandler}>CREATE SECTION</button>
-                    </form>
+            <div className='w-full flex justify-center text-center pt-5'>
+                <div className='flex flex-col justify-between h-full  w-96 text-center rounded-md shadow-lg border-2 bg-gray-100'>
+                    <h1 className='text-3xl font-black text-red-600 pt-5'>
+                        Section
+                    </h1>
+                    <div className='flex justify-around pb-10'>
+                        <form className='flex flex-col gap-5 text-left w-64 pt-8' onClick={createSectionHandler}>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='courseName'>Course Name</label>
+                                <input id='courseName' type='text' />
+                            </div>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='courseSection'>Course Section</label>
+                                <input id='courseSection' type='text' />
+                            </div>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='timeOfSession'>Time of Session</label>
+                                <input id='timeOfSession' type='text' />
+                            </div>
+                            <div className={formInput}>
+                                <label className={labelClass} htmlFor='buildingRoomNumber'>Location</label>
+                                <input id='buildingRoomNumber' type='text' />
+                            </div>
+                            <div className='flex flex-col'>
+                                <button className={buttonClass} type='submit'>Create Section</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </>
