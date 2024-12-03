@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 
-import '../../shared/styles/Forms.css';
-
 // this component will return either a login or register form
 
 function Authentication() {

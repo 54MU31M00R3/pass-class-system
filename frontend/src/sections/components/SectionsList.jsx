@@ -2,8 +2,6 @@ import React from 'react';
 
 import SectionItem from './SectionItem';
 
-import '../styles/Sections.css';
-
 // this component receives a list of sections
 // and maps them out to a the SectionItem component
 // to display their details on a card that will be 

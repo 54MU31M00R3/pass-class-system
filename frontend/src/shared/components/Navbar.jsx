@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth-context';
 
 import logo from '../../assets/images/yorku.png'
-import '../styles/Navbar.css';
 
 // this component displays links for the user to click based on
 // their credentials

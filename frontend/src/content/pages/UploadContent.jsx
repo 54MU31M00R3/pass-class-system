@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import AnnouncementForm from '../components/AnnouncementForm';
 import WorksheetForm from '../components/WorksheetForm';
 
-import '../../shared/styles/Forms.css';
-
 // this component will render either an announcement form
 // or worksheet form that will be used to send a post request to
 // the backend
