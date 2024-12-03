@@ -51,7 +51,7 @@ function OverviewHero({ sectionId, courseName, courseSection, timeOfSession, bui
                             <div className='flex text-end self-end gap-10'>
                                 {(auth.userId == mentor) && <Link className={buttonClass} to={`/${sectionId}/section/content/upload`}>Upload Content</Link>}
                                 {auth.userId == mentor && <button className={buttonClass}>Delete Section</button>}
-                                {auth.role == 'student' && isEnroled && <button className={buttonClass}>Log Attendance</button>}
+                                {!(auth.userId == mentor) && isEnroled && <button className={buttonClass}>Log Attendance</button>}
                             </div>
                         </div>
                     </div>

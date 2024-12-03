@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../context/auth-context';
 
@@ -11,7 +13,13 @@ import '../styles/Navbar.css';
 
 function Navbar() {
     const auth = useContext(AuthContext);
+    const navigate = useNavigate();
     const navLinkClass = ({ isActive }) => isActive ? `bg-white text-red-600 rounded-md px-3 py-2` : `text-white hover:bg-white hover:text-red-600 rounded-md  px-3 py-2`;
+
+    const logoutHandler = () => {
+        auth.logout();
+        toast.success('Logged out Successfully');
+    }
 
     return (
         <>
@@ -38,7 +46,7 @@ function Navbar() {
                     </li>)}
                     {/* a user can only see this link if logged in */}
                     {auth.isLoggedIn && (<li>
-                        <NavLink onClick={auth.logout} className={navLinkClass} to='/login'>Logout</NavLink>
+                        <NavLink onClick={logoutHandler} className={navLinkClass} to='/login'>Logout</NavLink>
                     </li>)}
                 </ul>
             </div>
