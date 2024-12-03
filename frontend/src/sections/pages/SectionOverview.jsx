@@ -46,7 +46,7 @@ function SectionOverview() {
         if (loadedSection) {
             const enroledStudent = loadedSection.students.find((student) => (student == userId));
 
-            if (enroledStudent) {
+            if (enroledStudent || (auth.userId == loadedSection.mentor)) {
                 setIsEnroled(true);
             } else {
                 setIsEnroled(false)
@@ -88,7 +88,7 @@ function SectionOverview() {
                     isEnroled={isEnroled}
                 />
                 {(isEnroled || (auth.userId == loadedSection.mentor)) && <SectionContent sectionId={sectionId} />}
-                {(!isEnroled || (!isEnroled && !(auth.userId == loadedSection.mentor))) && <div className='flex justify-center h-44'>
+                {(!isEnroled) && <div className='flex justify-center h-44'>
                     <div className='bg-gray-100 mt-10 w-1/2 h-full rounded-lg shadow-md border-2'>
                         <div className='flex justify-center h-full'>
                             <div className='flex flex-col h-full justify-around'>
