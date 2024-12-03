@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import Announcement from '../../content/components/Announcement';
 import Worksheet from '../../content/components/Worksheet';
-import OverviewHero from './OverviewHero';
 
 // component used to retrieve content such as announcements
 // and worksheets to be displayed on the section overview page
