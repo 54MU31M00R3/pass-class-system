@@ -4,6 +4,7 @@ import User from '../models/user.js';
 // be assigned a faculty role
 import faculty from '../faculty.json' with { type: "json" };
 
+// function user to get a user by their id
 const getUserById = async (req, res, next) => {
     const userId = req.params.userId;
 

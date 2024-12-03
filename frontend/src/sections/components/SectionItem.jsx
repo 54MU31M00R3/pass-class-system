@@ -35,6 +35,7 @@ function SectionItem({ sectionId, courseName, courseSection, timeOfSession, buil
 
     return (
         <>
+            {/* once loading has completed and there exists a mentor for a section a clickable card/link with pass info will be generated */}
             {!isLoading && loadedMentor && <NavLink className='w-1/2 m-10 p-10 shadow-md rounded-lg bg-gray-100'
                 to={auth.isLoggedIn && `/${sectionId}/section` || !auth.isLoggedIn && '/login'}>
                 <ul className='flex flex-col'>

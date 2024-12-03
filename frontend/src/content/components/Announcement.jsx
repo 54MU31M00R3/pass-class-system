@@ -32,9 +32,10 @@ function Announcement({ content }) {
 
   return (
     <>
-    {/* upon loading and existing the content's details will be displayed along
+      {/* upon loading and existing the content's details will be displayed along
           with its associated announcements details */}
       <div className='flex justify-center h-48 text-lg'>
+        {/* once loading is complete and there exists an announcement with a corresponding content ID this component will be rendered */}
         {!isLoading && loadedAnnouncement && <div className='flex flex-col justify-between h-42 w-1/2 mt-5 p-8 shadow-md rounded-lg bg-gray-100'>
           <ul className='flex justify-between'>
             <li className='font-black'>{content.title}</li>

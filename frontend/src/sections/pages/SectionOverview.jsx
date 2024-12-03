@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 // related to a section such as workhsheets and announcements
 
 function SectionOverview() {
+    // tailwind css
     const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
     // tracks user credentials
     const auth = useContext(AuthContext);
@@ -42,6 +43,7 @@ function SectionOverview() {
         setEnrolmentCheck(true);
     }, [])
 
+    // waits until section is loaded then proceeds to find if user is a student and if they are enroled in the section
     useEffect(() => {
         if (loadedSection) {
             const enroledStudent = loadedSection.students.find((student) => (student == userId));
@@ -55,6 +57,7 @@ function SectionOverview() {
         
     }, [loadedSection])
 
+    // function for sending a request to database to update student and section states to reference eachother
     const enrolSubmit = async () => {
         try {
             const response = await fetch(`http://localhost:5000/api/sections/section/${sectionId}/user/${userId}`);
@@ -77,6 +80,7 @@ function SectionOverview() {
 
     return (
         <>
+            {/* component is rendered once loading has completed */}
             {(!isLoading && loadedSection) && <div>
                 <OverviewHero
                     sectionId={loadedSection.id}
@@ -87,7 +91,10 @@ function SectionOverview() {
                     mentor={loadedSection.mentor}
                     isEnroled={isEnroled}
                 />
+                {/* depending on user details either one of these components are loaded */}
+                {/* if they are enroled or the mentor for the section, they may view the content */}
                 {(isEnroled || (auth.userId == loadedSection.mentor)) && <SectionContent sectionId={sectionId} />}
+                {/* if they are not enroled they may not view the content but instead have a prompt to enrol */}
                 {(!isEnroled) && <div className='flex justify-center h-44'>
                     <div className='bg-gray-100 mt-10 w-1/2 h-full rounded-lg shadow-md border-2'>
                         <div className='flex justify-center h-full'>

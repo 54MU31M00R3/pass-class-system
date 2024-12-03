@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 // backend to create a new section
 
 function SectionForm() {
+    // tailwind css classes
     const labelClass = 'text-lg font-medium';
     const formInput = 'flex flex-col pb-5';
     const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';

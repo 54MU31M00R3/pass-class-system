@@ -7,13 +7,15 @@ import { toast } from 'react-toastify';
 // this component will allow a user to register for an account
 
 function RegisterForm({ formToggler }) {
+    // tailwind css
+    const labelClass = 'text-lg font-medium';
+    const formInput = 'flex flex-col pb-5';
+    const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
+
     // will be user to log the user in if account creation is successful
     const auth = useContext(AuthContext);
     // will be used to redirect the user upon account creation
     const navigate = useNavigate();
-    const labelClass = 'text-lg font-medium';
-    const formInput = 'flex flex-col pb-5';
-    const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
 
     // on submit handler used to send a post request to create an account
     const registerSubmit = async (event) => {

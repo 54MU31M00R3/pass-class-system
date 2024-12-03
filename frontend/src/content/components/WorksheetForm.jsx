@@ -30,7 +30,7 @@ function WorksheetForm({ formToggler }) {
         formToggler(mode);
     }
 
-    // on submit handler of a post request for a worksheet
+    // on submit handler for a post request for a worksheet
     const worksheetSubmit = async (event) => {
         event.preventDefault();
 

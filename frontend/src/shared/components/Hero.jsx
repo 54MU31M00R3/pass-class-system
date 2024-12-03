@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Hero() {
+    // tailwind interactive css
     const cardClass = 'w-96 flex flex-col gap-5 bg-white p-4 p-6 rounded-lg shadow-md text-left text-2xl';
     const cardTextClass = 'text-left text-lg'
     return (

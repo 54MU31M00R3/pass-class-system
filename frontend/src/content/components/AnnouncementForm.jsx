@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 // to create an announcement. 
 
 function AnnouncementForm({ formToggler }) {
+    // tailwind css
     const labelClass = 'text-lg font-medium';
     const formInput = 'flex flex-col pb-5';
     const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
@@ -28,7 +29,7 @@ function AnnouncementForm({ formToggler }) {
         const mode = event.target.value;
         formToggler(mode);
     }
-    // on submit handler of a post request for an announcement 
+    // on submit handler for a post request for an announcement 
     const announcementSubmit = async (event) => {
         event.preventDefault();
 

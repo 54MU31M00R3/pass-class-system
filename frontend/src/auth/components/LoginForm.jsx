@@ -7,14 +7,16 @@ import { toast } from 'react-toastify';
 // this form allows a user to login and access their account
 
 function LoginForm({ formToggler }) {
+    // tailwind css
+    const labelClass = 'text-lg font-medium';
+    const formInput = 'flex flex-col pb-8';
+    const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
+    
     // used to log the user in upon a successful post request
     const auth = useContext(AuthContext);
     // used to redirect the user
     const navigate = useNavigate();
-    const labelClass = 'text-lg font-medium';
-    const formInput = 'flex flex-col pb-8';
-    const buttonClass = 'text-lg bg-red-600 text-white rounded-md px-3 py-2';
-
+    
     // submit handler used to send a post request and check user credentials
     const loginSubmit = async (event) => {
         // prevent button from reloading page

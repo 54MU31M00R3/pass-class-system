@@ -13,7 +13,9 @@ function MainLayout() {
   return (
     <>
         <Navbar/>
+        {/* Outlet allows other components to be rendered through mainlayout */}
         <Outlet/>
+        {/* Component for external package to display success and error notis */}
         <ToastContainer/>
     </>
   )

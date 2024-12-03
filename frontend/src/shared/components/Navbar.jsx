@@ -12,9 +12,10 @@ import logo from '../../assets/images/yorku.png'
 
 function Navbar() {
     const auth = useContext(AuthContext);
-    const navigate = useNavigate();
+    // tailwind interactice css
     const navLinkClass = ({ isActive }) => isActive ? `bg-white text-red-600 rounded-md px-3 py-2` : `text-white hover:bg-white hover:text-red-600 rounded-md  px-3 py-2`;
 
+    // upon logging out this function deletes user credentials and displays noti
     const logoutHandler = () => {
         auth.logout();
         toast.success('Logged out Successfully');

@@ -42,6 +42,7 @@ function SectionContent({ sectionId }) {
                 </div>
             </div>
       <div className='flex flex-col gap-10 mt-10'>
+        {/* once loading completes and there is content subsequent components will be generated according to type */}
         {!isLoading && loadedContent && loadedContent.map(content => {
           if (content.contentType === 'worksheet') {
             return <Worksheet key={content.id} content={content} />

@@ -31,7 +31,9 @@ function HomePage() {
 
     return (
         <>
+            {/* Hero component for general info */}
             <Hero />
+            {/* Header for Sections */}
             <div className='w-full flex justify-center text-center pt-5'>
                 <div className='flex flex-col justify-center h-16  w-96 text-center rounded-full shadow-lg border-2 border-slate-50 '>
                     <h1 className='text-3xl font-black text-red-600'>

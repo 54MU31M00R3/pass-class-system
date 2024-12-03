@@ -35,7 +35,6 @@ function Dashboard() {
   return (
     <>
       {/* once the data has been fetched and if there is any data at all this component will be loaded */}
-      
       {!isLoading && loadedSections && <SectionsList loadedSections={loadedSections} />}
     </>
   )
